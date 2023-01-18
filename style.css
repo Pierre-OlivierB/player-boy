@@ -4,5 +4,49 @@
   box-sizing: border-box;
 }
 body {
-  background: red;
+  /* background: red; */
+  height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template: "l r" 1fr;
+  padding: 5px;
+}
+.drawer {
+  border: 1px solid black;
+  grid-area: l;
+}
+.boy {
+  border: 1px solid black;
+  grid-area: r;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game {
+  border: 1px solid black;
+  margin: 2px;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.screen {
+  border: 1px solid black;
+  width: 80%;
+  height: 45%;
+}
+.down {
+  border: 1px solid black;
+  width: 80%;
+  height: 45%;
 }
