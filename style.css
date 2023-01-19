@@ -1,3 +1,6 @@
+:root {
+  --content-w-h: 500px;
+}
 * {
   padding: 0;
   margin: 0;
@@ -7,22 +10,43 @@ body {
   /* background: red; */
   height: 100vh;
 }
+/*! screen */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+/*! table */
 .content {
-  width: 500px;
-  height: 500px;
+  width: var(--content-w-h);
+  height: var(--content-w-h);
   display: grid;
   grid-template: "l r" 1fr;
+  grid-template-columns: calc(var(--content-w-h) / 2);
   padding: 5px;
 }
+/*!drawer */
 .drawer {
   border: 1px solid black;
   grid-area: l;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
 }
+/**just wood */
+.fix-part {
+  width: 10%;
+  height: 90%;
+  background: rgb(171, 171, 171);
+}
+/**musics */
+.content-part {
+  width: 85%;
+  height: 90%;
+  background: rgb(152, 111, 111);
+}
+/*!gameboy part */
 .boy {
   border: 1px solid black;
   grid-area: r;
@@ -30,6 +54,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+/** all content */
 .game {
   border: 1px solid black;
   margin: 2px;
@@ -40,13 +65,77 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+/** specificly screen */
 .screen {
   border: 1px solid black;
   width: 80%;
   height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
+.screen canvas {
+  border: 1px solid black;
+  width: 90%;
+  height: 80%;
+}
+.screen::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid red;
+  background: salmon;
+  top: 50px;
+  left: 1px;
+}
+
+/** btns part */
 .down {
   border: 1px solid black;
   width: 80%;
   height: 45%;
+}
+/** cross, play , pause */
+.part-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50%;
+}
+.cross {
+}
+.play {
+}
+.pause {
+}
+.btn-top {
+  width: 33%;
+  height: 90%;
+  border: 1px solid black;
+}
+/** select, stop */
+.part-bot {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50%;
+}
+.select {
+}
+.stop {
+}
+.btn-bot {
+  width: 30%;
+  height: 20%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-bot span {
+  text-align: center;
 }
