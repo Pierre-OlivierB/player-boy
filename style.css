@@ -1,5 +1,6 @@
 :root {
   --content-w-h: 500px;
+  --boy-radius: 15px;
 }
 * {
   padding: 0;
@@ -10,11 +11,22 @@ body {
   /* background: red; */
   height: 100vh;
 }
-/*! screen */
-.container {
+/*!Global disposition*/
+/** Display flex aic jcc*/
+.df {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/** round element*/
+.br-round {
+  border-radius: 50%;
+}
+/*! screen */
+.container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 /*! table */
 .content {
@@ -29,9 +41,9 @@ body {
 .drawer {
   border: 1px solid black;
   grid-area: l;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   flex-direction: row-reverse;
 }
 /**just wood */
@@ -50,9 +62,9 @@ body {
 .boy {
   border: 1px solid black;
   grid-area: r;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 /** all content */
 .game {
@@ -64,17 +76,19 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  border-radius: var(--boy-radius);
 }
 /** specificly screen */
 .screen {
   border: 1px solid black;
   width: 80%;
   height: 45%;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   flex-direction: column;
   position: relative;
+  border-radius: var(--boy-radius);
 }
 .screen canvas {
   border: 1px solid black;
@@ -95,7 +109,7 @@ body {
 
 /** btns part */
 .down {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 80%;
   height: 45%;
 }
@@ -106,23 +120,86 @@ body {
   justify-content: space-evenly;
   height: 50%;
 }
+/**cross*/
 .cross {
 }
+.grid-cross {
+  display: grid;
+  grid-template:
+    ". plus ." 1fr
+    "before . next" 1fr
+    ". minus ." 1fr;
+  height: inherit;
+  width: inherit;
+}
+.btn-cross {
+  list-style: none;
+  /* width: 10px;
+  height: 10px; */
+  border: 2px solid black;
+  transform: scale(1);
+  transition: transform 1s ease;
+}
+.btn-cross:hover {
+  transform: scale(0.9);
+}
+.btn-cross button {
+  border: 1px solid transparent;
+  background: transparent;
+}
+.btn-cross button:hover {
+  cursor: pointer;
+}
+.plus {
+  grid-area: plus;
+  border-bottom: 1px solid transparent;
+}
+.minus {
+  grid-area: minus;
+  border-top: 1px solid transparent;
+}
+.before {
+  grid-area: before;
+  border-right: 1px solid transparent;
+}
+.next {
+  grid-area: next;
+  border-left: 1px solid transparent;
+}
+
+/** btns*/
 .play {
+  /* border-radius: 50%; */
+}
+.play button,
+.pause button {
+  border: 1px solid transparent;
+  width: inherit;
+  height: inherit;
+  transform: scale(1);
+  transition: transform 1s ease;
+}
+.play button:hover,
+.pause button:hover {
+  cursor: pointer;
+  transform: scale(0.9);
 }
 .pause {
+  /* border-radius: 50%; */
 }
 .btn-top {
-  width: 33%;
-  height: 90%;
-  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  /* border: 1px solid black; */
 }
+/*! bot-btns*/
 /** select, stop */
 .part-bot {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 50%;
+  position: relative;
 }
 .select {
 }
@@ -131,11 +208,61 @@ body {
 .btn-bot {
   width: 30%;
   height: 20%;
-  border: 1px solid black;
-  display: flex;
+  /* border: 1px solid black; */
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+}
+.btn-bot button {
+  border: 1px solid black;
+  /* padding: 3px; */
+  border-radius: 5px;
+  width: 50px;
+  height: 17px;
+  background: transparent;
+  transform: scale(1);
+  transition: transform 1s ease, border-width 1s ease-in;
+}
+.btn-bot button:hover {
+  transform: scale(0.9);
+  border-width: 3px;
 }
 .btn-bot span {
   text-align: center;
+}
+/**Sound*/
+.sound {
+  /* width: 40px;
+  height: 40px; */
+  /* border: 1px solid black; */
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  display: grid;
+  grid-template:
+    " . . . " 10px
+    " a . b " 10px
+    " . c . " 10px
+    " d . e " 10px
+    " . . . " 10px;
+  grid-template-columns: 10px;
+  text-align: center;
+}
+.sound i:nth-child(n + 1) {
+  transform: scale(0.5);
+}
+.sound i:first-child {
+  grid-area: a;
+}
+.sound i:nth-child(2) {
+  grid-area: b;
+}
+.sound i:nth-child(3) {
+  grid-area: c;
+}
+.sound i:nth-child(4) {
+  grid-area: d;
+}
+.sound i:nth-child(5) {
+  grid-area: e;
 }

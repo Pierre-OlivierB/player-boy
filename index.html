@@ -5,26 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Player GameBoy</title>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- screen -->
-    <div class="container">
+    <div class="container df">
       <!-- table -->
       <div class="content">
         <!-- drawer -->
-        <section class="drawer">
+        <section class="drawer df">
           <div class="fix-part"></div>
           <!-- musics part -->
           <div class="content-part"></div>
         </section>
         <!-- part right table -->
-        <section class="boy">
+        <section class="boy df">
           <!-- gameboy -->
           <article class="game">
             <!-- screen -->
-            <div class="screen">
+            <div class="screen df">
               <canvas></canvas>
               <strong> <p>Title - Artist - Time</p></strong>
             </div>
@@ -33,21 +39,47 @@
               <!-- cross, play, pause -->
               <div class="part-top">
                 <!-- cross -->
-                <div class="cross btn-top"></div>
-                <!-- play -->
-                <div class="play btn-top"></div>
+                <div class="cross btn-top df">
+                  <ul class="grid-cross">
+                    <li class="btn-cross plus df">
+                      <button><i class="fas fa-plus"></i></button>
+                    </li>
+                    <li class="btn-cross minus df">
+                      <button><i class="fas fa-minus"></i></button>
+                    </li>
+                    <li class="btn-cross before df">
+                      <button><i class="fas fa-backward-step"></i></button>
+                    </li>
+                    <li class="btn-cross next df">
+                      <button><i class="fas fa-forward-step"></i></button>
+                    </li>
+                  </ul>
+                </div>
                 <!-- pause -->
-                <div class="pause btn-top"></div>
+                <div class="pause btn-top df br-round">
+                  <button class="br-round"><i class="fas fa-pause"></i></button>
+                </div>
+                <!-- play -->
+                <div class="play btn-top df br-round">
+                  <button class="br-round"><i class="fas fa-play"></i></button>
+                </div>
               </div>
               <!-- select, stop -->
               <div class="part-bot">
                 <!-- select -->
-                <div class="select btn-bot">
-                  <span>select</span>
+                <div class="select btn-bot df">
+                  <button><span>select</span></button>
                 </div>
                 <!-- stop -->
-                <div class="stop btn-bot">
-                  <span>stop</span>
+                <div class="stop btn-bot df">
+                  <button><span>stop</span></button>
+                </div>
+                <div class="sound">
+                  <i class="fas fa-circle-dot"></i
+                  ><i class="fas fa-circle-dot"></i
+                  ><i class="fas fa-circle-dot"></i
+                  ><i class="fas fa-circle-dot"></i
+                  ><i class="fas fa-circle-dot"></i>
                 </div>
               </div>
             </div>
