@@ -1,5 +1,5 @@
 :root {
-  --content-w-h: 500px;
+  --content-w-h: 1200px;
   --boy-radius: 15px;
 }
 * {
@@ -31,7 +31,7 @@ body {
 /*! table */
 .content {
   width: var(--content-w-h);
-  height: var(--content-w-h);
+  height: calc(var(--content-w-h) / 2);
   display: grid;
   grid-template: "l r" 1fr;
   grid-template-columns: calc(var(--content-w-h) / 2);
@@ -184,7 +184,7 @@ body {
 .game {
   border: 1px solid black;
   margin: 2px;
-  width: 90%;
+  width: 60%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -195,7 +195,7 @@ body {
 /** specificly screen */
 .screen {
   border: 1px solid black;
-  width: 80%;
+  width: 90%;
   height: 45%;
   /* display: flex;
   justify-content: center;
@@ -231,11 +231,13 @@ body {
 .part-top {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 50%;
 }
 /**cross*/
 .cross {
+  width: 150px;
+  height: 150px;
 }
 .grid-cross {
   display: grid;
@@ -243,6 +245,8 @@ body {
     ". plus ." 1fr
     "before . next" 1fr
     ". minus ." 1fr;
+  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 1fr 2fr;
   height: inherit;
   width: inherit;
 }
@@ -282,8 +286,12 @@ body {
 }
 
 /** btns*/
+.right-btns-part {
+  display: flex;
+}
 .play {
   /* border-radius: 50%; */
+  transform: translate(5px, -20px);
 }
 .play button,
 .pause button {
@@ -300,18 +308,23 @@ body {
 }
 .pause {
   /* border-radius: 50%; */
+  transform: translate(-10px, 10px);
 }
 .btn-top {
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid black; */
+}
+.btn-top-right {
   width: 50px;
   height: 50px;
-  /* border: 1px solid black; */
 }
 /*! bot-btns*/
 /** select, stop */
 .part-bot {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around; */
   height: 50%;
   position: relative;
 }

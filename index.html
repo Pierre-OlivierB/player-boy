@@ -77,37 +77,47 @@
                 <div class="cross btn-top df">
                   <ul class="grid-cross">
                     <li class="btn-cross plus df">
-                      <button><i class="fas fa-plus"></i></button>
+                      <button id="plus"><i class="fas fa-plus"></i></button>
                     </li>
                     <li class="btn-cross minus df">
-                      <button><i class="fas fa-minus"></i></button>
+                      <button id="minus"><i class="fas fa-minus"></i></button>
                     </li>
                     <li class="btn-cross before df">
-                      <button><i class="fas fa-backward-step"></i></button>
+                      <button id="backw">
+                        <i class="fas fa-backward-step"></i>
+                      </button>
                     </li>
                     <li class="btn-cross next df">
-                      <button><i class="fas fa-forward-step"></i></button>
+                      <button id="forw">
+                        <i class="fas fa-forward-step"></i>
+                      </button>
                     </li>
                   </ul>
                 </div>
-                <!-- pause -->
-                <div class="pause btn-top df br-round">
-                  <button class="br-round"><i class="fas fa-pause"></i></button>
-                </div>
-                <!-- play -->
-                <div class="play btn-top df br-round">
-                  <button class="br-round"><i class="fas fa-play"></i></button>
+                <div class="right-btns-part">
+                  <!-- pause -->
+                  <div class="pause btn-top-right df br-round">
+                    <button class="br-round" id="pause">
+                      <i class="fas fa-pause"></i>
+                    </button>
+                  </div>
+                  <!-- play -->
+                  <div class="play btn-top-right df br-round">
+                    <button class="br-round" id="play">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
               <!-- select, stop -->
-              <div class="part-bot">
+              <div class="part-bot df">
                 <!-- select -->
                 <div class="select btn-bot df">
-                  <button><span>select</span></button>
+                  <button id="select"><span>select</span></button>
                 </div>
                 <!-- stop -->
                 <div class="stop btn-bot df">
-                  <button><span>stop</span></button>
+                  <button id="stop"><span>stop</span></button>
                 </div>
                 <div class="sound">
                   <i class="fas fa-circle-dot"></i
@@ -123,7 +133,7 @@
       </div>
     </div>
     <div class="player">
-      <audio controls src="./" id="player">
+      <audio controls src="./list/tunkhatunkha-20948.mp3" id="player">
         <source src="" type="" />
       </audio>
     </div>
