@@ -6,7 +6,6 @@
 
 body {
   /* background: red; */
-  height: 100vh;
 }
 
 /*!Global disposition*/
@@ -35,6 +34,25 @@ body {
   grid-template: "l r" 1fr;
   grid-template-columns: 600px;
   padding: 5px;
+}
+
+#tstp-canvas {
+  border: 1px solid black;
+  width: 400px;
+  height: 260px;
+}
+
+.player {
+  margin-bottom: 50px;
+  justify-content: space-around;
+  position: relative;
+}
+
+#timePassed {
+  position: absolute;
+  bottom: 125px;
+  right: 140px;
+  width: 405px;
 }
 
 /*!drawer */

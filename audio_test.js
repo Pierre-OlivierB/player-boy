@@ -55,6 +55,7 @@ const draw = (normalizedData) => {
   const dpr = window.devicePixelRatio || 1;
   const padding = 20;
   canvas.width = canvas.offsetWidth * dpr;
+  console.log(canvas.height);
   canvas.height = (canvas.offsetHeight + padding * 2) * dpr;
   const ctx = canvas.getContext("2d");
   ctx.scale(dpr, dpr);

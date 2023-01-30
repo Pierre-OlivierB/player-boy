@@ -1,0 +1,17 @@
+#tstp-canvas{
+    border: 1px solid black;
+    width: 400px;
+    height: 260px;
+    // background: black;
+}
+.player{
+    margin-bottom: 50px;
+    justify-content: space-around;
+    position: relative;
+}
+#timePassed{
+    position: absolute;
+    bottom: 125px;
+    right: 140px;
+    width: 405px;
+}

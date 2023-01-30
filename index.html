@@ -67,7 +67,7 @@
           <article class="game">
             <!-- screen -->
             <div class="screen">
-              <canvas></canvas>
+              <canvas id="screen-canvas"></canvas>
               <strong> <p>Title - Artist - Time</p></strong>
             </div>
             <!-- btns and co -->
@@ -133,13 +133,16 @@
         </section>
       </div>
     </div>
-    <div class="player">
+    <div class="player df">
       <audio controls src="./list/tunkhatunkha-20948.mp3" id="player">
         <source src="./list/tunkhatunkha-20948.mp3" type=".mp3" />
       </audio>
+      <canvas id="tstp-canvas"></canvas>
+      <input type="range" name="" id="timePassed" value="0" />
     </div>
     <script src="./app.js"></script>
     <script src="./audio.js"></script>
+    <script src="./timeStamp.js"></script>
     <!-- <script src="./audio_test.js"></script> -->
   </body>
 </html>
