@@ -27,11 +27,13 @@
     flex-direction: column;
     position: relative;
     border-radius: $boy-radius;
+    
 
     & canvas{
       border: 1px solid black;
       width: 260px;
       height: 260px;
+      background: black;
     }
 
     &::before{

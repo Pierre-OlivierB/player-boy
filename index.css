@@ -228,6 +228,7 @@ body {
   border: 1px solid black;
   width: 260px;
   height: 260px;
+  background: black;
 }
 .screen::before {
   position: absolute;
