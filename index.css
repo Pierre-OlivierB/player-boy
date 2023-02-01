@@ -55,6 +55,15 @@ body {
   width: 405px;
 }
 
+@media screen and (max-width: 1279px) {
+  #timePassed {
+    right: 8px;
+  }
+  #cardsChoice {
+    transform: translate(445px, -450px) rotateZ(90deg);
+    width: 1000px;
+  }
+}
 /*!drawer */
 .drawer {
   border: 1px solid black;
