@@ -29,7 +29,7 @@ body {
 /*! table */
 .content {
   width: 1200px;
-  height: 705.8823529412px;
+  height: auto;
   display: grid;
   grid-template: "l r" 1fr;
   grid-template-columns: 600px;

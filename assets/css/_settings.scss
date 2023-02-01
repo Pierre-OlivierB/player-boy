@@ -27,7 +27,7 @@
   /*! table */
   .content {
     width: $content-w-h;
-    height: calc($content-w-h / 1.7);
+    height: auto;
     display: grid;
     grid-template: "l r" 1fr;
     grid-template-columns: calc($content-w-h / 2);
