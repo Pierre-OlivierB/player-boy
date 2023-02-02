@@ -1,275 +1,320 @@
 /*!gameboy part */
 .boy {
-    border: 1px solid black;
-    border-left: 1px solid transparent;
-    grid-area: r;
-  }
-  /** all content */
-  .game {
-    border: 1px solid black;
-    margin: 2px;
-    width: 400px;
-    height: 590px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: $boy-radius;
-  }
-  /** specificly screen */
-  .screen {
-    border: 1px solid black;
-    width: 350px;
-    height: 340px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    border-radius: $boy-radius;
-    
+  border: 1px solid black;
+  border-left: 1px solid transparent;
+  grid-area: r;
+}
 
-    & canvas{
-      border: 1px solid black;
-      width: 260px;
-      height: 260px;
-      background: black;
+/** all content */
+.game {
+  border: 1px solid black;
+  margin: 2px;
+  width: 400px;
+  height: 590px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: $boy-radius;
+}
+
+/** specificly screen */
+.screen {
+  border: 1px solid black;
+  width: 350px;
+  height: 340px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: $boy-radius;
+
+
+  & canvas {
+    border: 1px solid black;
+    width: 260px;
+    height: 260px;
+    background: black;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid red;
+    background: salmon;
+    top: 80px;
+    left: 15px;
+  }
+}
+
+/** btns part */
+.down {
+  width: 80%;
+  height: 35%;
+}
+
+/** cross, play , pause */
+.part-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50%;
+}
+
+/**cross*/
+.cross {
+  width: 150px;
+  height: 150px;
+}
+
+.grid-cross {
+  display: grid;
+  grid-template:
+    ". plus ." 1fr
+    "before . next" 1fr
+    ". minus ." 1fr;
+  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  height: inherit;
+  width: inherit;
+}
+
+.btn-cross {
+  list-style: none;
+  border: 2px solid black;
+  transform: scale(1);
+  transition: transform 1s ease, border 1s ease;
+
+  &:hover {
+    transform: scale(0.9);
+  }
+
+  & button {
+    border: 1px solid transparent;
+    background: transparent;
+
+    &:hover {
+      cursor: pointer;
     }
 
-    &::before{
-      position: absolute;
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1px solid red;
-      background: salmon;
-      top: 80px;
-      left: 15px;
+    & i {
+      transform: scale(1.35);
     }
-  } 
-  /** btns part */
-  .down {
-    width: 80%;
-    height: 35%;
   }
-  /** cross, play , pause */
-  .part-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 50%;
-  }
-  /**cross*/
-  .cross {
-    width: 150px;
-    height: 150px;
-  }
-  .grid-cross {
-    display: grid;
-    grid-template:
-      ". plus ." 1fr
-      "before . next" 1fr
-      ". minus ." 1fr;
-    grid-template-rows: 2fr 1fr 2fr;
-    grid-template-columns: 2fr 1fr 2fr;
-    height: inherit;
+}
+
+.plus {
+  grid-area: plus;
+  border-bottom: 1px solid transparent;
+}
+
+.minus {
+  grid-area: minus;
+  border-top: 1px solid transparent;
+}
+
+.before {
+  grid-area: before;
+  border-right: 1px solid transparent;
+}
+
+.next {
+  grid-area: next;
+  border-left: 1px solid transparent;
+}
+
+// *Sound
+.sound-display {
+  position: relative;
+  display: flex;
+  // border: 1px solid black;
+}
+
+.sound-control {
+  width: 50px;
+  height: 50px;
+  clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+  background: green;
+}
+
+/** btns*/
+.right-btns-part {
+  display: flex;
+}
+
+.play {
+  transform: translate(5px, -20px);
+
+  & button {
+    border: 1px solid transparent;
     width: inherit;
-  }
-  .btn-cross {
-    list-style: none;
-    border: 2px solid black;
+    height: inherit;
     transform: scale(1);
-    transition: transform 1s ease, border 1s ease;
+    transition: transform 1s ease;
 
-    &:hover{
+    &:hover {
+      cursor: pointer;
       transform: scale(0.9);
     }
 
-    & button{
-      border: 1px solid transparent;
-      background: transparent;
-
-      &:hover{
-        cursor: pointer;
-      }
-
-      & i{
-        transform: scale(1.35);
-      }
+    & i {
+      transform: translate(3px, 2px) scale(3);
     }
   }
+}
 
-  .plus {
-    grid-area: plus;
-    border-bottom: 1px solid transparent;
-  }
-  .minus {
-    grid-area: minus;
-    border-top: 1px solid transparent;
-  }
-  .before {
-    grid-area: before;
-    border-right: 1px solid transparent;
-  }
-  .next {
-    grid-area: next;
-    border-left: 1px solid transparent;
-  }
-  
-  /** btns*/
-  .right-btns-part {
-    display: flex;
-  }
-  .play {
-    transform: translate(5px, -20px);
+.pause {
+  transform: translate(-10px, 10px);
 
-    & button{
-      border: 1px solid transparent;
-      width: inherit;
-      height: inherit;
-      transform: scale(1);
-      transition: transform 1s ease;
+  & button {
+    border: 1px solid transparent;
+    width: inherit;
+    height: inherit;
+    transform: scale(1);
+    transition: transform 1s ease;
 
-      &:hover{
-        cursor: pointer;
-        transform: scale(0.9);
-      }
-
-      & i{
-        transform: translate(3px, 2px) scale(3);
-      }
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.9);
     }
-  } 
-  .pause {
-    transform: translate(-10px, 10px);
 
-    & button{
-      border: 1px solid transparent;
-      width: inherit;
-      height: inherit;
-      transform: scale(1);
-      transition: transform 1s ease;
-
-      &:hover{
-        cursor: pointer;
-        transform: scale(0.9);
-      }
-
-      & i{
-        transform: translate(0px, 2px) scale(3);
-      }
+    & i {
+      transform: translate(0px, 2px) scale(3);
     }
   }
-  .btn-top {
-    width: 100px;
-    height: 100px;
+}
+
+.btn-top {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-top-right {
+  width: 50px;
+  height: 50px;
+}
+
+/*! bot-btns*/
+/** select, stop */
+.part-bot {
+  height: 50%;
+  position: relative;
+}
+
+.btn-bot {
+  width: 30%;
+  height: 20%;
+
+  & button {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60px;
+    height: 15px;
+    background: transparent;
+    transform: scale(1);
+    transition: transform 1s ease, border-width 1s ease-in;
+
+    & span {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      transform: scale(0.9);
+      border-width: 3px;
+    }
+
   }
-  .btn-top-right {
-    width: 50px;
+}
+
+/**Sound*/
+.sound {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  display: grid;
+  grid-template:
+    " . . . " 10px
+    " a . b " 10px
+    " . c . " 10px
+    " d . e " 10px
+    " . . . " 10px;
+  grid-template-columns: 10px;
+  text-align: center;
+
+  & i:nth-child(n + 1) {
+    transform: scale(0.5);
+  }
+
+  & i:first-child {
+    grid-area: a;
+  }
+
+  & i:nth-child(2) {
+    grid-area: b;
+  }
+
+  & i:nth-child(3) {
+    grid-area: c;
+  }
+
+  & i:nth-child(4) {
+    grid-area: d;
+  }
+
+  & i:nth-child(5) {
+    grid-area: e;
+  }
+
+}
+
+@media screen and (max-width: 1279px) {
+  .content {
+    grid-template-areas: "r" "l";
+    width: auto;
+  }
+
+  .fix-part {
+    width: 620px;
     height: 50px;
   }
-  /*! bot-btns*/
-  /** select, stop */
-  .part-bot {
-    height: 50%;
-    position: relative;
+
+  .drawer {
+    /* transform: rotate(-90deg); */
+    flex-direction: column;
   }
-  .btn-bot {
-    width: 30%;
-    height: 20%;
 
-    & button{
-      border: 1px solid black;
-      border-radius: 5px;
-      width: 60px;
-      height: 15px;
-      background: transparent;
-      transform: scale(1);
-      transition: transform 1s ease, border-width 1s ease-in;
-    
-      & span{
-        text-align: center;
-        text-transform: uppercase;
-      }
-      &:hover{
-        transform: scale(0.9);
-        border-width: 3px;
-      }
-
-    }
+  .cpb-bot {
+    /* left:0; */
+    bottom: 0;
+    width: 100%;
+    height: 30px;
   }
-  /**Sound*/
-  .sound {
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    display: grid;
-    grid-template:
-      " . . . " 10px
-      " a . b " 10px
-      " . c . " 10px
-      " d . e " 10px
-      " . . . " 10px;
-    grid-template-columns: 10px;
-    text-align: center;
 
-    & i:nth-child(n + 1){
-      transform: scale(0.5);
-    }
-    & i:first-child {
-      grid-area: a;
-    }
-    & i:nth-child(2) {
-      grid-area: b;
-    }
-    & i:nth-child(3) {
-      grid-area: c;
-    }
-    & i:nth-child(4) {
-      grid-area: d;
-    }
-    & i:nth-child(5) {
-      grid-area: e;
-    }
-
+  .cpb-left {
+    z-index: 1;
   }
-  
-  @media screen and (max-width: 1279px) {
-    .content {
-      grid-template-areas: "r" "l";
-      width: auto;
-    }
-    .fix-part {
-      width: 620px;
-      height: 50px;
-    }
-    .drawer {
-      /* transform: rotate(-90deg); */
-      flex-direction: column;
-    }
-    .cpb-bot {
-      /* left:0; */
-      bottom: 0;
-      width: 100%;
-      height: 30px;
-    }
-    .cpb-left {
-      z-index: 1;
-    }
-    .cpb-right {
-      left: 0;
-      height: 100%;
-      width: 50px;
-    }
-    .cpb-mid {
-      padding: 50px;
-    }
-    .drawer,
-    .boy {
-      border: 1px solid transparent;
-    }
-    /* .game{
+
+  .cpb-right {
+    left: 0;
+    height: 100%;
+    width: 50px;
+  }
+
+  .cpb-mid {
+    padding: 50px;
+  }
+
+  .drawer,
+  .boy {
+    border: 1px solid transparent;
+  }
+
+  /* .game{
       
     } */
-  }
+}
