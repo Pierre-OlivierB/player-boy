@@ -51,7 +51,7 @@ const drawTwo = (normalizedData) => {
   const ctx = canvas.getContext("2d");
   ctx.scale(dpr, dpr);
   //   console.log(ctx);
-  ctx.translate(0, 150);
+  ctx.translate(0, 85);
 
   //   console.log(normalizeDataTwo);
   //*Draw line segment/
@@ -71,7 +71,7 @@ const drawTwo = (normalizedData) => {
 //*draw lines/
 const drawLineSegmentTwo = (ctx, x, height, width, isEven) => {
   ctx.lineWidth = 1;
-  ctx.strokeStyle = "#000000";
+  ctx.strokeStyle = "orange";
   ctx.beginPath();
   height = isEven ? height / 2 : -height / 2;
   ctx.moveTo(x, 0);

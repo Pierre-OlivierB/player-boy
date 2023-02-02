@@ -75,6 +75,8 @@ const draw = (normalizedData) => {
 //*Game
 var intervalRender;
 const player = document.getElementById("player");
+const greyTime = document.getElementById("grey-time-id");
+// console.log(greyTime);
 // general settings
 const speed = 1;
 const cTenth = canvas.width / 10;
@@ -135,6 +137,7 @@ function drawWall() {
     return console.log("fin");
   }
   timePassed.value = (player.currentTime * 100) / player.duration;
+  greyTime.style.width = `${timePassed.value}%`;
 }
 // *set-up launch
 function launch() {

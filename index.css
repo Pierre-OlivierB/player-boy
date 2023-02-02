@@ -23,7 +23,7 @@ body {
 
 /*! screen */
 .container {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 /*! table */
@@ -39,7 +39,7 @@ body {
 #tstp-canvas {
   border: 1px solid black;
   width: 400px;
-  height: 260px;
+  height: 130px;
 }
 
 .player {
@@ -50,15 +50,25 @@ body {
 
 #timePassed {
   position: absolute;
-  bottom: 125px;
-  right: 83px;
+  bottom: 60px;
+  right: 0;
   width: 405px;
 }
 
+#time-waves {
+  position: relative;
+}
+
+.grey-time {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 98%;
+  width: 0;
+  background-color: hsla(150deg, 10%, 50%, 0.2);
+}
+
 @media screen and (max-width: 1279px) {
-  #timePassed {
-    right: 8px;
-  }
   #cardsChoice {
     transform: translate(445px, -450px) rotateZ(90deg);
     width: 1000px;
