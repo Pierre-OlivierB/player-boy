@@ -82,11 +82,3 @@ const drawLineSegmentTwo = (ctx, x, height, width, isEven) => {
 };
 
 visualizeAudioTwo("./list/the-podcast-intro-111863.mp3");
-
-//!---------------------------------------------------------------//
-//*TimeStamp*/
-const timePassed = document.getElementById("timePassed");
-
-timePassed.addEventListener("change", () => {
-  console.log(timePassed.value);
-});

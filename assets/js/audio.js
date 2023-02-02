@@ -73,6 +73,7 @@ const draw = (normalizedData) => {
 
 //!-----------------------------------------------------
 //*Game
+var intervalRender;
 const player = document.getElementById("player");
 // general settings
 const speed = 1;
@@ -130,23 +131,40 @@ function drawWall() {
   }
   // *close loop
   if (index > heightArray.length) {
-    launch.clearInterval();
+    clearInterval(intervalRender);
     return console.log("fin");
   }
+  timePassed.value = (player.currentTime * 100) / player.duration;
 }
 // *set-up launch
 function launch() {
   player.play();
+
   // console.log(Math.ceil(player.duration));
   samples = Math.ceil(player.duration);
-  console.log(samples);
+  // console.log(samples);
   visualizeAudio("./list/tropical-summer-music-112842.mp3");
   position = [wall, wall1, wall2];
-  setInterval(drawWall, 10);
+  intervalRender = setInterval(drawWall, 10);
 }
 
 //* start game
 const play = document.getElementById("play");
 play.addEventListener("click", launch);
-const music = new Audio("../../list/tropical-summer-music-112842.mp3");
+// const music = new Audio("../../list/tropical-summer-music-112842.mp3");
 // console.log(music.duration());
+//*pause game
+function pause() {
+  player.pause();
+}
+
+const pauseBtn = document.getElementById("pause");
+// console.log(pauseBtn);
+pauseBtn.addEventListener("click", pause);
+//!---------------------------------------------------------------//
+//*TimeStamp*/
+const timePassed = document.getElementById("timePassed");
+
+timePassed.addEventListener("change", () => {
+  console.log(timePassed.value);
+});
