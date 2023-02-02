@@ -37,26 +37,44 @@ body {
 }
 
 #tstp-canvas {
-  border: 1px solid black;
   width: 400px;
   height: 130px;
 }
 
 .player {
   margin-bottom: 50px;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: relative;
 }
 
 #timePassed {
+  cursor: pointer;
   position: absolute;
   bottom: 60px;
   right: 0;
   width: 405px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 3;
 }
 
 #time-waves {
   position: relative;
+}
+#time-waves:hover #timePassed {
+  opacity: 1;
+}
+#time-waves::before, #time-waves::after {
+  content: "";
+  width: 1px;
+  height: 10px;
+  border: 3px solid hsla(150deg, 10%, 50%, 0.8);
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+}
+#time-waves::after {
+  left: 394px;
 }
 
 .grey-time {
@@ -66,6 +84,13 @@ body {
   height: 98%;
   width: 0;
   background-color: hsla(150deg, 10%, 50%, 0.2);
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  border: 1px solid hsla(150deg, 10%, 50%, 0.8);
+  bottom: 67px;
 }
 
 @media screen and (max-width: 1279px) {

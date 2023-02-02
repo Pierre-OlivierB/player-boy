@@ -1,38 +1,73 @@
-
-#tstp-canvas{
-    border: 1px solid black;
+#tstp-canvas {
+    // border: 1px solid black;
     width: 400px;
     height: 130px;
     // background: black;
 }
-.player{
+
+.player {
     margin-bottom: 50px;
-    justify-content: space-around;
+    justify-content: space-evenly;
     position: relative;
 }
-#timePassed{
+
+#timePassed {
+    cursor: pointer;
     position: absolute;
     bottom: 60px;
     right: 0;
     width: 405px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 3;
 }
-#time-waves{
+
+#time-waves {
     position: relative;
+
+    &:hover #timePassed {
+        opacity: 1;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        width: 1px;
+        height: 10px;
+        border: 3px solid hsla(150, 10%, 50%, 0.8);
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+    }
+
+    &::after {
+        left: 394px;
+    }
 }
-.grey-time{
+
+.grey-time {
     position: absolute;
     left: 0;
-    top:0;
+    top: 0;
     height: 98%;
     width: 0;
     background-color: hsla(150, 10%, 50%, 0.2);
 }
 
+.line {
+    position: absolute;
+    width: 100%;
+    border: 1px solid hsla(150, 10%, 50%, 0.8);
+    bottom: 67px;
+
+}
+
 @media screen and (max-width:1279px) {
+
     // #timePassed{
     //     right: 8px;
     // }
-    #cardsChoice{
+    #cardsChoice {
         transform: translate(445px, -450px) rotateZ(90deg);
         width: 1000px;
     }
