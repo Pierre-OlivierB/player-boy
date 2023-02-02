@@ -75,15 +75,15 @@ const cTenth = canvas.width / 10;
 
 let index = 0,
   flyHeight,
-  pipes = [];
+  walls = [];
 
 // pipe settings
-const pipeWidth = 10;
-const pipeHeight = 50;
-const pipeGap = 5;
-const pipeLoc = 10;
+const wallWidth = 10;
+const wallHeight = 50;
+const wallGap = 50;
+const wallLoc = 10;
 
-var position;
+var position = new Array();
 
 function drawWall() {
   // !Experimental:
@@ -93,13 +93,32 @@ function drawWall() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   // *blue for wall
   ctx.fillStyle = "blue";
-  position--;
-  ctx.fillRect(position, 110, pipeWidth, pipeHeight);
+  // *move the first el
+  position[0] = position[0] - speed;
+  // *display walls
+  for (let i = 0; i < position.length; i++) {
+    ctx.fillRect(position[i], 110, wallWidth, wallHeight);
+  }
+
   // console.log(position);
+  // *first wall get out
+  if (position[0] < -wallWidth) {
+    position = [...position.slice(1), canvas.width];
+    console.log(position);
+  }
+  //*first wall -middle screen = second move
+  if (position[0] < canvas.width / 1.5) {
+    position[1] = position[1] - speed;
+  }
+  // *third wall -middle screen = third move
+  if (position[1] < canvas.width / 1.5) {
+    position[2] = position[2] - speed;
+  }
 }
+// *set-up launch
 function launch() {
-  position = 260;
-  setInterval(drawWall, 1000);
+  position = [canvas.width, canvas.width, canvas.width];
+  setInterval(drawWall, 10);
 }
 
 // start game
