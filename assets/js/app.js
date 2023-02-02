@@ -1,6 +1,6 @@
 // console.log("test");
 //!Recup DOM
-var player = document.getElementById("player");
+// var player = document.getElementById("player");
 
 //*---------------------------------------
 //*Tools:

@@ -5,7 +5,7 @@ const audioContext = new AudioContext();
 const canvas = document.getElementById("screen-canvas");
 const ctx = canvas.getContext("2d");
 var heightArray = new Array();
-const samples = 50;
+var samples = 50;
 
 //**link mp3.infos to audioContext */
 const visualizeAudio = (url) => {
@@ -51,11 +51,11 @@ const draw = (normalizedData) => {
     if (height > canvas.height - padding) {
       height = canvas.height - padding;
     }
-    console.log(height);
+    // console.log(height);
     heightArray[i] = Math.ceil(height);
     // drawLineSegment(ctx, x, height, (i + 1) % 2);
   }
-  console.log(heightArray);
+  // console.log(heightArray);
   // heightArray = [...normalizedData];
 };
 //*draw lines/
@@ -73,6 +73,7 @@ const draw = (normalizedData) => {
 
 //!-----------------------------------------------------
 //*Game
+const player = document.getElementById("player");
 // general settings
 const speed = 1;
 const cTenth = canvas.width / 10;
@@ -135,10 +136,11 @@ function drawWall() {
 }
 // *set-up launch
 function launch() {
+  player.play();
+  // console.log(Math.ceil(player.duration));
+  samples = Math.ceil(player.duration);
+  console.log(samples);
   visualizeAudio("./list/tropical-summer-music-112842.mp3");
-  // const player = document.getElementById("player");
-  // player.play();
-  console.log(heightArray);
   position = [wall, wall1, wall2];
   setInterval(drawWall, 10);
 }
@@ -146,3 +148,5 @@ function launch() {
 //* start game
 const play = document.getElementById("play");
 play.addEventListener("click", launch);
+const music = new Audio("../../list/tropical-summer-music-112842.mp3");
+// console.log(music.duration());
