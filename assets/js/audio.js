@@ -4,6 +4,8 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
 const canvas = document.getElementById("screen-canvas");
 const ctx = canvas.getContext("2d");
+var heightArray = new Array();
+const samples = 50;
 
 //**link mp3.infos to audioContext */
 const visualizeAudio = (url) => {
@@ -15,7 +17,6 @@ const visualizeAudio = (url) => {
 //* filter fetch data*/
 const filterData = (audioBuffer) => {
   const rawData = audioBuffer.getChannelData(0);
-  const samples = 50;
   const blockSize = Math.floor(rawData.length / samples);
   const filteredData = [];
   for (let i = 0; i < samples; i++) {
@@ -30,29 +31,32 @@ const normalizeData = (filteredData) => {
 };
 //*inject data.infos in html */
 const draw = (normalizedData) => {
-  const dpr = window.devicePixelRatio || 1;
+  // const dpr = window.devicePixelRatio || 1;
   const padding = 20;
-  canvas.width = canvas.offsetWidth * dpr;
-  canvas.height = (canvas.offsetHeight + padding * 2) * dpr;
+  // canvas.width = canvas.offsetWidth * dpr;
+  // canvas.height = (canvas.offsetHeight + padding * 2) * dpr;
 
-  ctx.scale(dpr, dpr);
-  ctx.translate(0, 250 + padding);
+  // ctx.scale(dpr, dpr);
+  // ctx.translate(0, 250 + padding);
 
   //*Draw line segment/
   // const width = canvas.offsetWidth / normalizedData.length;
   for (let i = 0; i < normalizedData.length; i++) {
     // const x = width * i;
-    let height = normalizedData[i] * canvas.offsetHeight - padding;
+    let height = normalizedData[i] * canvas.height - padding;
     // console.log(height);
-    if (height > 0) {
+    if (height < 0) {
       height = -height;
     }
-    if (height > canvas.offsetHeight - padding) {
-      height = canvas.offsetHeight - padding;
+    if (height > canvas.height - padding) {
+      height = canvas.height - padding;
     }
-    // console.log(ctx);
+    console.log(height);
+    heightArray[i] = Math.ceil(height);
     // drawLineSegment(ctx, x, height, (i + 1) % 2);
   }
+  console.log(heightArray);
+  // heightArray = [...normalizedData];
 };
 //*draw lines/
 // const drawLineSegment = (ctx, x, height, isEven) => {
@@ -74,8 +78,7 @@ const speed = 1;
 const cTenth = canvas.width / 10;
 
 let index = 0,
-  flyHeight,
-  walls = [];
+  flyHeight;
 
 // pipe settings
 const wallWidth = 10;
@@ -84,6 +87,9 @@ const wallGap = 50;
 const wallLoc = 10;
 
 var position = new Array();
+var wall = [canvas.width, wallHeight],
+  wall1 = [canvas.width, wallHeight],
+  wall2 = [canvas.width, wallHeight];
 
 function drawWall() {
   // !Experimental:
@@ -94,33 +100,49 @@ function drawWall() {
   // *blue for wall
   ctx.fillStyle = "blue";
   // *move the first el
-  position[0] = position[0] - speed;
+  position[0][0] = position[0][0] - speed;
   // *display walls
   for (let i = 0; i < position.length; i++) {
-    ctx.fillRect(position[i], 110, wallWidth, wallHeight);
+    ctx.fillRect(
+      position[i][0],
+      canvas.height - heightArray[index + i],
+      wallWidth,
+      heightArray[index + i]
+    );
   }
 
+  // console.log(heightArray[0]);
   // console.log(position);
   // *first wall get out
-  if (position[0] < -wallWidth) {
-    position = [...position.slice(1), canvas.width];
-    console.log(position);
+  if (position[0][0] < -wallWidth) {
+    index++;
+    position = [...position.slice(1), [canvas.width, heightArray[index + 2]]];
+    // console.log(position[0][0]);
   }
   //*first wall -middle screen = second move
-  if (position[0] < canvas.width / 1.5) {
-    position[1] = position[1] - speed;
+  if (position[0][0] < canvas.width / 1.5) {
+    position[1][0] = position[1][0] - speed;
   }
   // *third wall -middle screen = third move
-  if (position[1] < canvas.width / 1.5) {
-    position[2] = position[2] - speed;
+  if (position[1][0] < canvas.width / 1.5) {
+    position[2][0] = position[2][0] - speed;
+  }
+  // *close loop
+  if (index > heightArray.length) {
+    launch.clearInterval();
+    return console.log("fin");
   }
 }
 // *set-up launch
 function launch() {
-  position = [canvas.width, canvas.width, canvas.width];
+  visualizeAudio("./list/tropical-summer-music-112842.mp3");
+  // const player = document.getElementById("player");
+  // player.play();
+  console.log(heightArray);
+  position = [wall, wall1, wall2];
   setInterval(drawWall, 10);
 }
 
-// start game
+//* start game
 const play = document.getElementById("play");
 play.addEventListener("click", launch);
