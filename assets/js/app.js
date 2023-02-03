@@ -18,7 +18,28 @@
 //! wave sound
 // TODO: read : https://css-tricks.com/making-an-audio-waveform-visualizer-with-vanilla-javascript/
 // TODO : see: https://www.youtube.com/watch?v=ftjZI4mLCoI&list=RDCMUCkjoHfkLEy7ZT4bA2myJ8xA&start_radio=1&rv=ftjZI4mLCoI&t=0
+// *------------------------------------------------------------
+const titleCard = document.getElementById("title-cd");
+const artCard = document.getElementById("artist-cd");
+const timeCard = document.getElementById("time-cd");
+const titleScreen = document.getElementById("title-sc");
+const artScreen = document.getElementById("artist-sc");
+const timeScreen = document.getElementById("time-sc");
+// console.log(titleCard, artCard, timeCard);
+// console.log(titleScreen, artScreen, timeScreen);
+// *Load 1frst production
+window.addEventListener("load", () => {
+  console.log(musicsList[0].title);
 
+  titleCard.innerText = musicsList[0].title;
+  titleScreen.innerText = musicsList[0].title;
+
+  artCard.innerText = musicsList[0].artist;
+  artScreen.innerText = musicsList[0].artist;
+
+  timeCard.innerText = musicsList[0].time;
+  timeScreen.innerText = musicsList[0].time;
+});
 //*--------------------------------------------------------------
 // *sound control
 const soundCtrlPlus = document.getElementById("plus-btn");

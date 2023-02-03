@@ -231,11 +231,14 @@ body {
   align-items: flex-end;
   background: url(./img/img-cards/conso.jpg) center/cover;
 }
-.card-mid span {
+.card-mid p {
   text-align: center;
   width: 100%;
   color: white;
   background: hsla(0deg, 0%, 0%, 0.75);
+}
+.card-mid p span {
+  margin-right: 2px;
 }
 
 .card-bot {

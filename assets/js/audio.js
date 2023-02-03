@@ -142,6 +142,7 @@ function drawWall() {
 // *set-up launch
 function launch() {
   player.play();
+  // console.log(player.src);
 
   // console.log(Math.ceil(player.duration));
   samples = Math.ceil(player.duration);

@@ -1,139 +1,162 @@
 /*!drawer */
 .drawer {
-    border: 1px solid black;
-    border-right: 1px solid transparent;
-    grid-area: l;
-    flex-direction: row-reverse;
-  }
-  /**just wood */
-  .fix-part {
-    width: 50px;
-    height: 620px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-  /**musics */
-  .content-part {
-    width: 540px;
-    height: 580px;
-    background: rgb(152, 111, 111);
-    position: relative;
-    border-radius: 20px;
-  }
-  /**borders*/
-  .content-part-border {
-    border: 1px solid black;
-    display: flex;
-  }
-  .cpb-top {
-    width: 50px;
-    height: 100%;
-    position: absolute;
-    right: 0;
-  }
-  .cpb-left {
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    top: 0px;
-  }
-  .cpb-right {
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: 0px;
-  }
-  .cpb-bot {
-    width: 30px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-  }
-  .cpb-bg {
-    background: white;
-    border-radius: 5px;
-  }
-  /*!Cards*/
-  .cpb-mid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 540px;
-    height: 580px;
-    border-radius: 5px;
-    padding: 50px 50px 50px 25px;
-  }
-  /**Card*/
-  .card {
-    background: white;
-    width: 190px;
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    transition: transform 1s ease;
+  border: 1px solid black;
+  border-right: 1px solid transparent;
+  grid-area: l;
+  flex-direction: row-reverse;
+}
 
-    &:hover{
-      background: lightgray;
-      transform: scale(1.01);
-    }
+/**just wood */
+.fix-part {
+  width: 50px;
+  height: 620px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/**musics */
+.content-part {
+  width: 540px;
+  height: 580px;
+  background: rgb(152, 111, 111);
+  position: relative;
+  border-radius: 20px;
+}
+
+/**borders*/
+.content-part-border {
+  border: 1px solid black;
+  display: flex;
+}
+
+.cpb-top {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+.cpb-left {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+}
+
+.cpb-right {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.cpb-bot {
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.cpb-bg {
+  background: white;
+  border-radius: 5px;
+}
+
+/*!Cards*/
+.cpb-mid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 540px;
+  height: 580px;
+  border-radius: 5px;
+  padding: 50px 50px 50px 25px;
+}
+
+/**Card*/
+.card {
+  background: white;
+  width: 190px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  transition: transform 1s ease;
+
+  &:hover {
+    background: lightgray;
+    transform: scale(1.01);
   }
-  .card-top {
-    height: 15%;
-    width: 100%;
-    display: flex;
-    padding-top: 10px;
-    padding-bottom: 5px;
-  }
-  .ct {
+}
+
+.card-top {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.ct {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  & p {
     border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
 
-    & p{
-      border: 1px solid black;
-    }
   }
-  .ct-left {
-    width: 10%;
-    height: 100%;
-  }
-  .ct-mid {
-    width: 80%;
-    height: 100%;
-    background: linear-gradient(to bottom, hsl(0, 0%, 80%), hsl(0, 0%, 50%));
-  }
-  .ct-right {
-    width: 10%;
-    height: 100%;
-  }
-  
-  .card-mid {
-    height: 70%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background: url(./img/img-cards/conso.jpg) center/cover;
+}
 
-    & span{
-      text-align: center;
-      width: 100%;
-      color: white;
-      background: hsla(0, 0%, 0%, 0.75);
-    }
-  }
-  .card-bot {
-    height: 15%;
+.ct-left {
+  width: 10%;
+  height: 100%;
+}
+
+.ct-mid {
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(to bottom, hsl(0, 0%, 80%), hsl(0, 0%, 50%));
+}
+
+.ct-right {
+  width: 10%;
+  height: 100%;
+}
+
+.card-mid {
+  height: 70%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: url(./img/img-cards/conso.jpg) center/cover;
+
+  & p {
+    text-align: center;
     width: 100%;
-  }
-  .play-card {
-    position: relative;
-    transform: translate(3px) scale(1.5);
-  }
-  .play-white {
-    position: absolute;
     color: white;
-    transform: translateX(0px) scale(0.8);
+    background: hsla(0, 0%, 0%, 0.75);
+
+    & span {
+      margin-right: 2px;
+    }
   }
+}
+
+.card-bot {
+  height: 15%;
+  width: 100%;
+}
+
+.play-card {
+  position: relative;
+  transform: translate(3px) scale(1.5);
+}
+
+.play-white {
+  position: absolute;
+  color: white;
+  transform: translateX(0px) scale(0.8);
+}
