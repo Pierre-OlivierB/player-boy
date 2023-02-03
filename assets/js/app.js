@@ -19,27 +19,29 @@
 // TODO: read : https://css-tricks.com/making-an-audio-waveform-visualizer-with-vanilla-javascript/
 // TODO : see: https://www.youtube.com/watch?v=ftjZI4mLCoI&list=RDCMUCkjoHfkLEy7ZT4bA2myJ8xA&start_radio=1&rv=ftjZI4mLCoI&t=0
 // *------------------------------------------------------------
-const titleCard = document.getElementById("title-cd");
-const artCard = document.getElementById("artist-cd");
-const timeCard = document.getElementById("time-cd");
+
 const titleScreen = document.getElementById("title-sc");
 const artScreen = document.getElementById("artist-sc");
 const timeScreen = document.getElementById("time-sc");
-// console.log(titleCard, artCard, timeCard);
+
+// var titleCard, artCard, timeCard;
 // console.log(titleScreen, artScreen, timeScreen);
 // *Load 1frst production
+function loadMusicScreen(e) {
+  titleScreen.innerText = musicsList[e].title;
+  artScreen.innerText = musicsList[e].artist;
+  timeScreen.innerText = musicsList[e].time;
+}
+// function loadMusicCard(e) {
+//   titleCard[e].innerText = musicsList[e].title;
+//   artCard[e].innerText = musicsList[e].artist;
+//   timeCard[e].innerText = musicsList[e].time;
+// }
 window.addEventListener("load", () => {
-  console.log(musicsList[0].title);
-
-  titleCard.innerText = musicsList[0].title;
-  titleScreen.innerText = musicsList[0].title;
-
-  artCard.innerText = musicsList[0].artist;
-  artScreen.innerText = musicsList[0].artist;
-
-  timeCard.innerText = musicsList[0].time;
-  timeScreen.innerText = musicsList[0].time;
+  // console.log(musicsList[0].title);
+  loadMusicScreen(0);
 });
+var indexMusic = 0;
 //*--------------------------------------------------------------
 // *sound control
 const soundCtrlPlus = document.getElementById("plus-btn");
@@ -83,9 +85,23 @@ const prevMusic = document.getElementById("before-btn");
 
 function nxtMsc() {
   console.log("next music");
+  if (indexMusic === musicsList.length - 1) {
+    indexMusic = 0;
+  } else if (indexMusic < musicsList.length - 1) {
+    indexMusic++;
+  }
+  console.log(indexMusic);
+  loadMusicScreen(indexMusic);
 }
 function prvMsc() {
   console.log("previous music");
+  if (indexMusic === 0) {
+    indexMusic = musicsList.length - 1;
+  } else if (indexMusic > 0) {
+    indexMusic--;
+  }
+  console.log(indexMusic);
+  loadMusicScreen(indexMusic);
 }
 
 nextMusic.addEventListener("click", nxtMsc);
