@@ -136,6 +136,8 @@ $sound: 50;
   display: flex;
   bottom: -25px;
   left: 20px;
+  opacity: 0;
+  transition: opacity 1s ease;
 
   // border: 1px solid black;
   & p {
@@ -144,6 +146,10 @@ $sound: 50;
     justify-content: center;
     align-items: flex-end;
   }
+}
+
+.cross:hover+.sound-display {
+  opacity: 1;
 }
 
 .sound-control {
