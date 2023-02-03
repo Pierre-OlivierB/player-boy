@@ -1,3 +1,5 @@
+$sound: 50;
+
 /*!gameboy part */
 .boy {
   border: 1px solid black;
@@ -63,6 +65,7 @@
   align-items: center;
   justify-content: space-between;
   height: 50%;
+  position: relative;
 }
 
 /**cross*/
@@ -129,16 +132,26 @@
 
 // *Sound
 .sound-display {
-  position: relative;
+  position: absolute;
   display: flex;
+  bottom: -25px;
+  left: 20px;
+
   // border: 1px solid black;
+  & p {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }
 
 .sound-control {
-  width: 50px;
-  height: 50px;
+  width: $sound+px;
+  height: calc($sound/2)+px;
   clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
   background: green;
+  margin-bottom: 5px;
 }
 
 /** btns*/

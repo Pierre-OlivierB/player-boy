@@ -77,10 +77,10 @@
                 <!-- cross -->
                 <div class="cross btn-top df">
                   <ul class="grid-cross">
-                    <li class="btn-cross plus df">
+                    <li class="btn-cross plus df" id="plus-btn">
                       <button id="plus"><i class="fas fa-plus"></i></button>
                     </li>
-                    <li class="btn-cross minus df">
+                    <li class="btn-cross minus df" id="minus-btn">
                       <button id="minus"><i class="fas fa-minus"></i></button>
                     </li>
                     <li class="btn-cross before df">
@@ -97,7 +97,7 @@
                 </div>
                 <div class="sound-display">
                   <div class="sound-control"></div>
-                  <p><span></span>%</p>
+                  <p><span id="cnt-sound">100</span>%</p>
                 </div>
                 <div class="right-btns-part">
                   <!-- pause -->
@@ -149,9 +149,9 @@
         <div class="line"></div>
       </section>
     </div>
-    <script src="./assets/js/app.js"></script>
     <script src="./assets/js/audio.js"></script>
     <script src="./assets/js/timeStamp.js"></script>
+    <script src="./assets/js/app.js"></script>
     <!-- <script src="./assets/js/audio_test.js"></script> -->
   </body>
 </html>
