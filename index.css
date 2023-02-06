@@ -132,6 +132,7 @@ body {
   height: 580px;
   position: relative;
   border-radius: 20px;
+  transition: all 1s ease;
 }
 
 /**borders*/
@@ -145,17 +146,19 @@ body {
   height: 100%;
   position: absolute;
   right: 0;
+  z-index: 1;
+  transition: all 1s ease;
 }
 
 .cpb-left {
-  width: 100%;
+  width: 1000px;
   height: 50px;
   position: absolute;
   top: 0px;
 }
 
 .cpb-right {
-  width: 100%;
+  width: 1000px;
   height: 50px;
   position: absolute;
   bottom: 0px;

@@ -55,10 +55,14 @@ window.addEventListener("load", repeatCard);
 
 const cardsChoice = document.getElementById("cardsChoice");
 const drawerContent = document.getElementById("drawer-content");
+const drawerFixePart = document.querySelector(".cpb-top");
+// console.log(drawerFixePart);
 // console.log(cardsChoice.value, drawerContent);
 
-cardsChoice.addEventListener("click", () => {
-  console.log(drawerContent.scrollbars);
+cardsChoice.addEventListener("change", () => {
+  // console.log(drawerContent.scrollbars);
+  drawerFixePart.style.transform =
+    "translateX(" + cardsChoice.value * 5.5 + "px)";
   drawerContent.style.transform = "translateX(" + -cardsChoice.value + "%)";
-  console.log(cardsChoice.value);
+  // console.log(cardsChoice.value);
 });

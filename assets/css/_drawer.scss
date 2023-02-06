@@ -1,3 +1,5 @@
+$drawer-width : 1000px;
+
 /*!drawer */
 .drawer {
   border: 1px solid black;
@@ -25,6 +27,7 @@
   position: relative;
   border-radius: 20px;
   // overflow: hidden;
+  transition: all 1s ease;
 }
 
 /**borders*/
@@ -38,17 +41,19 @@
   height: 100%;
   position: absolute;
   right: 0;
+  z-index: 1;
+  transition: all 1s ease;
 }
 
 .cpb-left {
-  width: 100%;
+  width: $drawer-width;
   height: 50px;
   position: absolute;
   top: 0px;
 }
 
 .cpb-right {
-  width: 100%;
+  width: $drawer-width;
   height: 50px;
   position: absolute;
   bottom: 0px;
@@ -71,7 +76,7 @@
   display: flex;
   flex-wrap: wrap;
   // width: 540px;
-  width: 1000px;
+  width: $drawer-width;
   height: 580px;
   border-radius: 5px;
   padding: 50px 50px 50px 25px;
