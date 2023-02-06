@@ -85,3 +85,13 @@ cardsChoice.addEventListener("change", () => {
 // * Card
 
 console.log(cardActive);
+
+function addActiveOnNext() {
+  let cards = document.querySelectorAll(".card");
+  cards.forEach((e) => {
+    console.log(e.id);
+  });
+}
+function addActiveOnPrev() {}
+nextMusic.addEventListener("click", addActiveOnNext);
+prevMusic.addEventListener("click", addActiveOnPrev);
