@@ -31,6 +31,7 @@ function loadMusicScreen(e) {
   titleScreen.innerText = musicsList[e].title;
   artScreen.innerText = musicsList[e].artist;
   timeScreen.innerText = musicsList[e].time;
+  player.src = musicsList[e].src;
 }
 // function loadMusicCard(e) {
 //   titleCard[e].innerText = musicsList[e].title;
@@ -92,6 +93,7 @@ function nxtMsc() {
   }
   console.log(indexMusic);
   loadMusicScreen(indexMusic);
+  visualizeAudioTwo(player.src);
 }
 function prvMsc() {
   console.log("previous music");
@@ -102,6 +104,7 @@ function prvMsc() {
   }
   console.log(indexMusic);
   loadMusicScreen(indexMusic);
+  visualizeAudioTwo(player.src);
 }
 
 nextMusic.addEventListener("click", nxtMsc);

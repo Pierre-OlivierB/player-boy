@@ -147,7 +147,7 @@ function launch() {
   // console.log(Math.ceil(player.duration));
   samples = Math.ceil(player.duration);
   // console.log(samples);
-  visualizeAudio("./list/tropical-summer-music-112842.mp3");
+  visualizeAudio(player.src);
   position = [wall, wall1, wall2];
   intervalRender = setInterval(drawWall, 10);
 }

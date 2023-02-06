@@ -81,4 +81,4 @@ const drawLineSegmentTwo = (ctx, x, height, width, isEven) => {
   ctx.stroke();
 };
 
-visualizeAudioTwo("./list/the-podcast-intro-111863.mp3");
+visualizeAudioTwo(player.src);
