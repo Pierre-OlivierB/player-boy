@@ -1,4 +1,5 @@
 var keyCard = 0;
+var cardActive;
 
 const content = document.getElementById("content");
 
@@ -51,8 +52,21 @@ function repeatCard() {
 }
 // console.log(titleCard, artCard, timeCard);
 // console.log(content);
-window.addEventListener("load", repeatCard);
-
+// *reapeat card, add listener on it, add possibility class on click
+window.addEventListener("load", () => {
+  repeatCard();
+  cardActive = document.querySelectorAll(".card");
+  cardActive.forEach((e) => {
+    e.addEventListener("click", () => {
+      for (let i = 0; i < cardActive.length; i++) {
+        cardActive[i].classList.remove("card-active");
+      }
+      e.classList.add("card-active");
+    });
+  });
+});
+// !------------------------------------------------------------
+// * Drawer
 const cardsChoice = document.getElementById("cardsChoice");
 const drawerContent = document.getElementById("drawer-content");
 const drawerFixePart = document.querySelector(".cpb-top");
@@ -66,3 +80,8 @@ cardsChoice.addEventListener("change", () => {
   drawerContent.style.transform = "translateX(" + -cardsChoice.value + "%)";
   // console.log(cardsChoice.value);
 });
+
+// !-----------------------------------------------------------
+// * Card
+
+console.log(cardActive);

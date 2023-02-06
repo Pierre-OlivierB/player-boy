@@ -94,7 +94,8 @@ $drawer-width : 1000px;
   margin: 10px;
   transition: transform 1s ease;
 
-  &:hover {
+  &:hover,
+  &.card-active {
     background: lightgray;
     transform: scale(1.01);
   }
