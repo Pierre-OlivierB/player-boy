@@ -74,6 +74,7 @@ const draw = (normalizedData) => {
 //!-----------------------------------------------------
 //*Game
 var intervalRender;
+var onPlay = false;
 const player = document.getElementById("player");
 const greyTime = document.getElementById("grey-time-id");
 // console.log(greyTime);
@@ -141,15 +142,14 @@ function drawWall() {
 }
 // *set-up launch
 function launch() {
-  player.play();
-  // console.log(player.src);
-
-  // console.log(Math.ceil(player.duration));
-  samples = Math.ceil(player.duration);
-  // console.log(samples);
-  visualizeAudio(player.src);
-  position = [wall, wall1, wall2];
-  intervalRender = setInterval(drawWall, 10);
+  if (!onPlay) {
+    onPlay = true;
+    player.play();
+    visualizeAudio(player.src);
+    samples = Math.ceil(player.duration);
+    position = [wall, wall1, wall2];
+    intervalRender = setInterval(drawWall, 10);
+  }
 }
 
 //* start game
@@ -160,6 +160,8 @@ play.addEventListener("click", launch);
 //*pause game
 function pause() {
   player.pause();
+  clearInterval(intervalRender);
+  onPlay = false;
 }
 
 const pauseBtn = document.getElementById("pause");
