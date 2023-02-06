@@ -52,3 +52,13 @@ function repeatCard() {
 // console.log(titleCard, artCard, timeCard);
 // console.log(content);
 window.addEventListener("load", repeatCard);
+
+const cardsChoice = document.getElementById("cardsChoice");
+const drawerContent = document.getElementById("drawer-content");
+// console.log(cardsChoice.value, drawerContent);
+
+cardsChoice.addEventListener("click", () => {
+  console.log(drawerContent.scrollbars);
+  drawerContent.style.transform = "translateX(" + -cardsChoice.value + "%)";
+  console.log(cardsChoice.value);
+});

@@ -7,7 +7,7 @@
 
 .player {
     margin-bottom: 50px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     position: relative;
 }
 
@@ -60,6 +60,10 @@
     border: 1px solid hsla(150, 10%, 50%, 0.8);
     bottom: 67px;
 
+}
+
+#cardsChoice {
+    width: 500px;
 }
 
 @media screen and (max-width:1279px) {

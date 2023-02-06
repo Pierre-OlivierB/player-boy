@@ -8,6 +8,10 @@ body {
   /* background: red; */
 }
 
+#player {
+  display: none;
+}
+
 /*!Global disposition*/
 /** Display flex aic jcc*/
 .df {
@@ -43,7 +47,7 @@ body {
 
 .player {
   margin-bottom: 50px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   position: relative;
 }
 
@@ -93,6 +97,10 @@ body {
   bottom: 67px;
 }
 
+#cardsChoice {
+  width: 500px;
+}
+
 @media screen and (max-width: 1279px) {
   #cardsChoice {
     transform: translate(445px, -450px) rotateZ(90deg);
@@ -102,24 +110,26 @@ body {
 /*!drawer */
 .drawer {
   border: 1px solid black;
-  border-right: 1px solid transparent;
+  border-right: none;
   grid-area: l;
   flex-direction: row-reverse;
 }
 
 /**just wood */
 .fix-part {
-  width: 50px;
+  width: 70px;
   height: 620px;
   border: 1px solid black;
   border-radius: 5px;
+  background: white;
+  position: relative;
+  z-index: 1;
 }
 
 /**musics */
 .content-part {
   width: 540px;
   height: 580px;
-  background: rgb(152, 111, 111);
   position: relative;
   border-radius: 20px;
 }
@@ -167,10 +177,11 @@ body {
 .cpb-mid {
   display: flex;
   flex-wrap: wrap;
-  width: 540px;
+  width: 1000px;
   height: 580px;
   border-radius: 5px;
   padding: 50px 50px 50px 25px;
+  background: rgb(152, 111, 111);
 }
 
 /**Card*/
@@ -262,6 +273,8 @@ body {
   border: 1px solid black;
   border-left: 1px solid transparent;
   grid-area: r;
+  background: hsl(0deg, 0%, 75%);
+  position: relative;
 }
 
 /** all content */
