@@ -4,8 +4,9 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioContext = new AudioContext();
 const canvas = document.getElementById("screen-canvas");
 const ctx = canvas.getContext("2d");
+const player = document.getElementById("player");
 var heightArray = new Array();
-var samples = 50;
+var samplesAudio = 70;
 
 //**link mp3.infos to audioContext */
 const visualizeAudio = (url) => {
@@ -16,10 +17,13 @@ const visualizeAudio = (url) => {
 };
 //* filter fetch data*/
 const filterData = (audioBuffer) => {
+  samplesAudio = Math.floor(player.duration);
+  console.log(samplesAudio);
   const rawData = audioBuffer.getChannelData(0);
-  const blockSize = Math.floor(rawData.length / samples);
+  const blockSize = Math.floor(rawData.length / samplesAudio);
   const filteredData = [];
-  for (let i = 0; i < samples; i++) {
+  // console.log(player.duration);
+  for (let i = 0; i < samplesAudio; i++) {
     filteredData.push(rawData[i * blockSize]);
   }
   return filteredData;
@@ -43,7 +47,7 @@ const draw = (normalizedData) => {
 
   //*Draw line segment/
   // const width = canvas.offsetWidth / normalizedData.length;
-  console.log(normalizedData.length);
+  // console.log(normalizedData.length);
   for (let i = 0; i < normalizedData.length; i++) {
     // const x = width * i;
     let height = normalizedData[i] * canvas.height - padding;
@@ -78,7 +82,6 @@ const draw = (normalizedData) => {
 //*Game
 var intervalRender;
 var onPlay = false;
-const player = document.getElementById("player");
 const greyTime = document.getElementById("grey-time-id");
 // console.log(greyTime);
 // general settings

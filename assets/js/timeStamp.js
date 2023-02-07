@@ -29,6 +29,7 @@ const filterDataTwo = (audioBuffer) => {
     }
     filteredData.push(sum / blockSize);
   }
+  // console.log(filteredData.length);
   return filteredData;
 };
 // console.log(filterDataTwo);
