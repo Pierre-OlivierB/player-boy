@@ -1,6 +1,6 @@
 // console.log("test");
 //!Recup DOM
-// var player = document.getElementById("player");
+// var playerSound = document.getElementById("player");
 
 //*---------------------------------------
 //*Tools:
@@ -49,30 +49,38 @@ const soundCtrlPlus = document.getElementById("plus-btn");
 const soundCtrlMinus = document.getElementById("minus-btn");
 const countVol = document.getElementById("cnt-sound");
 // console.log(countVol.innerText);
-var vol = player.volume;
+var vol;
 // console.log(soundCtrl);
+// console.log(vol);
 
 function soundPlus() {
+  vol = player.volume;
   if (vol === 1 || vol > 1) {
     vol = 1;
+
     // console.log("no plus");
   } else if (vol < 1) {
-    vol = vol + 0.01;
+    vol = vol + 0.05;
+    vol = Math.round(vol * 100) / 100;
   }
   countVol.innerText = Math.ceil(vol * 100);
+  player.volume = vol;
 
-  //   console.log(vol);
+  // console.log(vol);
 }
 function soundMinus() {
+  vol = player.volume;
   if (vol === 0 || vol <= 0.01) {
     vol = 0;
 
     // console.log("no minus");
   } else if (vol > 0.01) {
-    vol = vol - 0.01;
+    vol = vol - 0.05;
+    vol = Math.round(vol * 100) / 100;
   }
   countVol.innerText = Math.ceil(vol * 100);
-  //   console.log(vol);
+  player.volume = vol;
+  // console.log(vol);
 }
 
 soundCtrlPlus.addEventListener("click", soundPlus);
