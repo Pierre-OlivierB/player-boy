@@ -95,6 +95,7 @@ var position = new Array();
 var wall = [canvas.width, wallHeight],
   wall1 = [canvas.width, wallHeight],
   wall2 = [canvas.width, wallHeight];
+position = [wall, wall1, wall2];
 
 function drawWall() {
   // !Experimental:
@@ -147,7 +148,7 @@ function launch() {
     player.play();
     visualizeAudio(player.src);
     samples = Math.ceil(player.duration);
-    position = [wall, wall1, wall2];
+    position;
     intervalRender = setInterval(drawWall, 10);
   }
 }
