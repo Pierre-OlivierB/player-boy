@@ -1,45 +1,45 @@
 {
     "musics": [
         {
-            "title": "testtitle0",
-            "artist": "testname0",
-            "time": "00:00",
-            "img": "test0.jpeg",
+            "title": "Ambient Background",
+            "artist": "Alex Grohl",
+            "time": "01:46",
+            "img": "alexGrohl.png",
             "src": "./list/ambient-background-cross-cultures-131570.mp3"
         },
         {
-            "title": "testtitle1",
-            "artist": "testname1",
-            "time": "01:00",
-            "img": "test0.jpeg",
+            "title": "Cinematic Documentary",
+            "artist": "Lexin Music",
+            "time": "02:11",
+            "img": "lexin.png",
             "src": "./list/cinematic-documentary-115669.mp3"
         },
         {
-            "title": "testtitle2",
-            "artist": "testname2",
-            "time": "02:00",
-            "img": "test0.jpeg",
+            "title": "King Around Here",
+            "artist": "Alex Grohl",
+            "time": "01:50",
+            "img": "alexGrohl.png",
             "src": "./list/electronic-rock-king-around-here-15045.mp3"
         },
         {
-            "title": "testtitle3",
-            "artist": "testname3",
-            "time": "00:00",
-            "img": "test0.jpeg",
+            "title": "Epic Cinematic Trailer",
+            "artist": "PaulYudin",
+            "time": "02:27",
+            "img": "pavel.png",
             "src": "./list/epic-cinematic-trailer-113981.mp3"
         },
         {
-            "title": "testtitle4",
-            "artist": "testname4",
-            "time": "01:00",
-            "img": "test0.jpeg",
+            "title": "The Podcast Intro",
+            "artist": "Music Unlimited",
+            "time": "01:51",
+            "img": "unlimited.png",
             "src": "./list/the-podcast-intro-111863.mp3"
         },
         {
-            "title": "testtitle5",
-            "artist": "testname5",
-            "time": "02:00",
-            "img": "test0.jpeg",
+            "title": "Tropical Summer Music",
+            "artist": "Music Unlimited",
+            "time": "02:35",
+            "img": "unlimited2.png",
             "src": "./list/tropical-summer-music-112842.mp3"
         }
     ]

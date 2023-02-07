@@ -43,10 +43,14 @@ function repeatCard() {
     let titleCard = document.querySelectorAll(".title-cd");
     let artCard = document.querySelectorAll(".artist-cd");
     let timeCard = document.querySelectorAll(".time-cd");
+    let bgCard = document.querySelectorAll(".card-mid");
     // console.log(titleCard[i].innerText);
     titleCard[i].innerText = musicsList[i].title;
     artCard[i].innerText = musicsList[i].artist;
     timeCard[i].innerText = musicsList[i].time;
+    bgCard[
+      i
+    ].style.background = `url('./img/img-cards/${musicsList[i].img}') center/cover`;
     keyCard++;
   }
 }
