@@ -43,6 +43,7 @@ const draw = (normalizedData) => {
 
   //*Draw line segment/
   // const width = canvas.offsetWidth / normalizedData.length;
+  console.log(normalizedData.length);
   for (let i = 0; i < normalizedData.length; i++) {
     // const x = width * i;
     let height = normalizedData[i] * canvas.height - padding;
@@ -138,6 +139,12 @@ function drawWall() {
   // *close loop
   if (index > heightArray.length) {
     clearInterval(intervalRender);
+    index = 0;
+    onPlay = false;
+    wall = [canvas.width, wallHeight];
+    wall1 = [canvas.width, wallHeight];
+    wall2 = [canvas.width, wallHeight];
+    position = [wall, wall1, wall2];
     return console.log("fin");
   }
   timePassed.value = (player.currentTime * 100) / player.duration;

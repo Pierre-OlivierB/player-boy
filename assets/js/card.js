@@ -71,6 +71,11 @@ window.addEventListener("load", () => {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       loadMusicScreen(indexMusic);
       visualizeAudioTwo(player.src);
+      wall = [canvas.width, wallHeight];
+      wall1 = [canvas.width, wallHeight];
+      wall2 = [canvas.width, wallHeight];
+      position = [wall, wall1, wall2];
+      index = 0;
     });
   });
   let firstCard = document.getElementById("card0");

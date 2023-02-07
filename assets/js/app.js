@@ -104,7 +104,8 @@ function nxtMsc() {
   wall1 = [canvas.width, wallHeight];
   wall2 = [canvas.width, wallHeight];
   position = [wall, wall1, wall2];
-  console.log(position);
+  // console.log(position);
+  index = 0;
 }
 function prvMsc() {
   console.log("previous music");
@@ -113,7 +114,7 @@ function prvMsc() {
   } else if (indexMusic > 0) {
     indexMusic--;
   }
-  console.log(indexMusic);
+  // console.log(indexMusic);
   // reset gamescreen
   onPlay = false;
   greyTime.style.width = 0;
@@ -126,6 +127,7 @@ function prvMsc() {
   wall1 = [canvas.width, wallHeight];
   wall2 = [canvas.width, wallHeight];
   position = [wall, wall1, wall2];
+  index = 0;
 }
 
 nextMusic.addEventListener("click", nxtMsc);
