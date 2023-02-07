@@ -31,6 +31,8 @@ const normalizeData = (filteredData) => {
 };
 //*inject data.infos in html */
 const draw = (normalizedData) => {
+  // *reset data walls generation
+  heightArray = [];
   // const dpr = window.devicePixelRatio || 1;
   const padding = 20;
   // canvas.width = canvas.offsetWidth * dpr;

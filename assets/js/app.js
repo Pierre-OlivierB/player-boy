@@ -100,6 +100,11 @@ function nxtMsc() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   loadMusicScreen(indexMusic);
   visualizeAudioTwo(player.src);
+  wall = [canvas.width, wallHeight];
+  wall1 = [canvas.width, wallHeight];
+  wall2 = [canvas.width, wallHeight];
+  position = [wall, wall1, wall2];
+  console.log(position);
 }
 function prvMsc() {
   console.log("previous music");
@@ -117,6 +122,10 @@ function prvMsc() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   loadMusicScreen(indexMusic);
   visualizeAudioTwo(player.src);
+  wall = [canvas.width, wallHeight];
+  wall1 = [canvas.width, wallHeight];
+  wall2 = [canvas.width, wallHeight];
+  position = [wall, wall1, wall2];
 }
 
 nextMusic.addEventListener("click", nxtMsc);
