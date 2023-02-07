@@ -62,6 +62,15 @@ window.addEventListener("load", () => {
         cardActive[i].classList.remove("card-active");
       }
       e.classList.add("card-active");
+      // console.log(e.id.slice(4));
+      indexMusic = e.id.slice(4);
+      onPlay = false;
+      greyTime.style.width = 0;
+      clearInterval(intervalRender);
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      loadMusicScreen(indexMusic);
+      visualizeAudioTwo(player.src);
     });
   });
   let firstCard = document.getElementById("card0");
