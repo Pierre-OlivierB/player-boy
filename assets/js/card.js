@@ -91,14 +91,26 @@ window.addEventListener("load", () => {
 const cardsChoice = document.getElementById("cardsChoice");
 const drawerContent = document.getElementById("drawer-content");
 const drawerFixePart = document.querySelector(".cpb-top");
+const drawerBackPart = document.querySelector(".cpb-mid");
+var screenWidth = window.innerWidth;
 // console.log(drawerFixePart);
 // console.log(cardsChoice.value, drawerContent);
 
 cardsChoice.addEventListener("change", () => {
   // console.log(drawerContent.scrollbars);
-  drawerFixePart.style.transform =
-    "translateX(" + cardsChoice.value * 5.5 + "px)";
-  drawerContent.style.transform = "translateX(" + -cardsChoice.value + "%)";
+  // console.log(screenWidth);
+  if (screenWidth > 1279) {
+    drawerFixePart.style.transform =
+      "translateX(" + cardsChoice.value * 5.5 + "px)";
+    drawerContent.style.transform = "translateX(" + -cardsChoice.value + "%)";
+  } else if (screenWidth < 1279) {
+    // drawerFixePart.style.transform =
+    //   "translateY(" + -cardsChoice.value * 5.5 + "px)";
+    // console.log(cardsChoice.value);
+    drawerBackPart.style.transform =
+      "translateY(" + (-45 + cardsChoice.value / 2) + "%)";
+  }
+
   // console.log(cardsChoice.value);
 });
 

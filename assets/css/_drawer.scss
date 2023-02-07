@@ -83,6 +83,25 @@ $drawer-width : 1000px;
   background: rgb(152, 111, 111);
 }
 
+@media screen and (max-width: 1279px) {
+  .cpb-mid {
+    height: $drawer-width;
+    width: 540px;
+    transform: translateY(-45%);
+    transition: all 1s ease;
+    flex-direction: column-reverse;
+  }
+
+  .cpb-right {
+    z-index: 1;
+  }
+
+  .content-part {
+    overflow: hidden;
+  }
+
+}
+
 /**Card*/
 .card {
   background: white;

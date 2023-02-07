@@ -72,7 +72,13 @@
     //     right: 8px;
     // }
     #cardsChoice {
-        transform: translate(445px, -450px) rotateZ(90deg);
-        width: 1000px;
+        transform: translate(210px, -310px) rotateZ(90deg);
+        width: 450px;
+        position: relative;
+        z-index: 5
+    }
+
+    .player {
+        flex-direction: column;
     }
 }

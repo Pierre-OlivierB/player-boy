@@ -314,10 +314,18 @@ $sound: 50;
     bottom: 0;
     width: 100%;
     height: 30px;
+    z-index: 3;
   }
 
   .cpb-left {
     z-index: 1;
+  }
+
+  @media screen and (max-width: 1279px) {
+    .cpb-left {
+      width: 540px;
+      z-index: 2;
+    }
   }
 
   .cpb-right {
