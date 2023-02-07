@@ -201,6 +201,7 @@ body {
 .card:hover, .card.card-active {
   background: lightgray;
   transform: scale(1.01);
+  cursor: pointer;
 }
 
 .card-top {

@@ -64,6 +64,9 @@ window.addEventListener("load", () => {
       e.classList.add("card-active");
     });
   });
+  let firstCard = document.getElementById("card0");
+  // console.log(firstCard);
+  firstCard.classList.add("card-active");
 });
 // !------------------------------------------------------------
 // * Drawer
@@ -84,14 +87,19 @@ cardsChoice.addEventListener("change", () => {
 // !-----------------------------------------------------------
 // * Card
 
-console.log(cardActive);
+// console.log(cardActive);
 
-function addActiveOnNext() {
-  let cards = document.querySelectorAll(".card");
-  cards.forEach((e) => {
-    console.log(e.id);
-  });
+function addActiveOnChange() {
+  // console.log(document.getElementById(`card${indexMusic}`));
+  let nextCard = document.getElementById(`card${indexMusic}`);
+  cardActive = document.querySelectorAll(".card");
+  for (let i = 0; i < cardActive.length; i++) {
+    cardActive[i].classList.remove("card-active");
+  }
+  nextCard.classList.add("card-active");
 }
-function addActiveOnPrev() {}
-nextMusic.addEventListener("click", addActiveOnNext);
-prevMusic.addEventListener("click", addActiveOnPrev);
+// function addActiveOnPrev() {
+
+// }
+nextMusic.addEventListener("click", addActiveOnChange);
+prevMusic.addEventListener("click", addActiveOnChange);

@@ -98,6 +98,7 @@ $drawer-width : 1000px;
   &.card-active {
     background: lightgray;
     transform: scale(1.01);
+    cursor: pointer;
   }
 }
 
