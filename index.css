@@ -61,12 +61,14 @@ body {
   transition: opacity 1s ease;
   z-index: 3;
 }
+#timePassed.time-passed-visible {
+  opacity: 1;
+  z-index: 1;
+}
 
 #time-waves {
   position: relative;
-}
-#time-waves:hover #timePassed {
-  opacity: 1;
+  z-index: -1;
 }
 #time-waves::before, #time-waves::after {
   content: "";

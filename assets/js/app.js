@@ -165,3 +165,26 @@ function stopMusic() {
   }
 }
 stopBtn.addEventListener("click", stopMusic);
+
+// !------------------------------------------------
+// *Select
+const slctBtn = document.getElementById("select");
+// const timePassed = document.getElementById("timePassed");
+// console.log(timePassed);
+var selectToggle = false;
+// const addVisibility = (timePassed.classList.add = "time-passed-visible");
+// const removeVisibility = (timePassed.classList.remove = "time-passed-visible");
+// console.log(slctBtn);
+function selectPress() {
+  if (!selectToggle) {
+    selectToggle = true;
+    // console.log("Possibility : " + selectToggle);
+    timePassed.classList.add("time-passed-visible");
+  } else if (selectToggle) {
+    selectToggle = false;
+    // console.log("Possibility : " + selectToggle);
+    timePassed.classList.remove("time-passed-visible");
+  }
+  // console.log("sélection du temps");
+}
+slctBtn.addEventListener("click", selectPress);

@@ -20,14 +20,20 @@
     opacity: 0;
     transition: opacity 1s ease;
     z-index: 3;
+
+    &.time-passed-visible {
+        opacity: 1;
+        z-index: 1;
+    }
 }
 
 #time-waves {
     position: relative;
+    z-index: -1;
 
-    &:hover #timePassed {
-        opacity: 1;
-    }
+    // &:hover #timePassed {
+    //     opacity: 1;
+    // }
 
     &::before,
     &::after {
@@ -44,6 +50,8 @@
         left: 394px;
     }
 }
+
+
 
 .grey-time {
     position: absolute;
