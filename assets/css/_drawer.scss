@@ -100,6 +100,11 @@ $drawer-width : 1000px;
     overflow: hidden;
   }
 
+  .cpb-left {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+
 }
 
 /**Card*/

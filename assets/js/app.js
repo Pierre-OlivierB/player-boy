@@ -41,6 +41,7 @@ function loadMusicScreen(e) {
 window.addEventListener("load", () => {
   // console.log(musicsList[0].title);
   loadMusicScreen(0);
+  visualizeAudioTwo(player.src);
 });
 var indexMusic = 0;
 //*--------------------------------------------------------------
@@ -140,3 +141,27 @@ function prvMsc() {
 
 nextMusic.addEventListener("click", nxtMsc);
 prevMusic.addEventListener("click", prvMsc);
+
+// !-----------------------------------------
+// *Stop Btns
+const stopBtn = document.getElementById("stop");
+// console.log(stopBtn);
+function stopMusic() {
+  if (onPlay || inPause) {
+    onPlay = false;
+    inPause = false;
+    greyTime.style.width = 0;
+    clearInterval(intervalRender);
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    loadMusicScreen(indexMusic);
+    visualizeAudioTwo(player.src);
+    wall = [canvas.width, wallHeight];
+    wall1 = [canvas.width, wallHeight];
+    wall2 = [canvas.width, wallHeight];
+    position = [wall, wall1, wall2];
+    index = 0;
+    console.log("btn stop press");
+  }
+}
+stopBtn.addEventListener("click", stopMusic);

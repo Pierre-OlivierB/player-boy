@@ -82,4 +82,4 @@ const drawLineSegmentTwo = (ctx, x, height, width, isEven) => {
   ctx.stroke();
 };
 
-visualizeAudioTwo(player.src);
+// visualizeAudioTwo(player.src);

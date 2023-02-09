@@ -206,6 +206,10 @@ body {
   .content-part {
     overflow: hidden;
   }
+  .cpb-left {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
 }
 /**Card*/
 .card {
@@ -570,6 +574,8 @@ body {
     width: 100%;
     height: 30px;
     z-index: 3;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
   .cpb-left {
     z-index: 1;
@@ -598,7 +604,7 @@ body {
 }
 @media screen and (max-width: 1279px) {
   .drawer,
-.boy {
+  .boy {
     border: 1px solid transparent;
   }
 }/*# sourceMappingURL=index.css.map */

@@ -82,6 +82,7 @@ const draw = (normalizedData) => {
 //*Game
 var intervalRender;
 var onPlay = false;
+var inPause = false;
 const greyTime = document.getElementById("grey-time-id");
 // console.log(greyTime);
 // general settings
@@ -157,6 +158,7 @@ function drawWall() {
 function launch() {
   if (!onPlay) {
     onPlay = true;
+    inPause = false;
     player.play();
     visualizeAudio(player.src);
     samples = Math.ceil(player.duration);
@@ -171,7 +173,9 @@ play.addEventListener("click", launch);
 // const music = new Audio("../../list/tropical-summer-music-112842.mp3");
 // console.log(music.duration());
 //*pause game
+
 function pause() {
+  inPause = true;
   player.pause();
   clearInterval(intervalRender);
   onPlay = false;
