@@ -143,9 +143,15 @@ window.addEventListener("load", (e) => {
   // console.log(cardsChoice.value);
 });
 
-window.addEventListener("resize", () => {
-  // verifChange = true;
-  location.reload();
+window.addEventListener("resize", (e) => {
+  if (e.currentTarget.innerWidth < 1279) {
+    location.reload();
+  }
+  //   resetForTransform();
+
+  //   cardsChoice.addEventListener("change", () => {
+  //     highInnerWidth();
+  //   });
   // console.log(verifChange, cardsChoiceChanged);
   // console.log(e.currentTarget.innerWidth);
   // if (e.currentTarget.innerWidth > 1279 && verifChange == true) {

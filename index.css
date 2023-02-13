@@ -43,6 +43,10 @@ body {
 #tstp-canvas {
   width: 400px;
   height: 130px;
+  position: relative;
+  z-index: 1;
+  position: absolute;
+  right: 3px;
 }
 
 .player {
@@ -52,23 +56,28 @@ body {
 }
 
 #timePassed {
-  cursor: pointer;
   position: absolute;
   bottom: 60px;
   right: 0;
   width: 405px;
   opacity: 0;
   transition: opacity 1s ease;
-  z-index: 3;
+  z-index: 0;
+  top: 60px;
 }
 #timePassed.time-passed-visible {
   opacity: 1;
-  z-index: 1;
+  z-index: 10;
+  height: 10px;
+}
+#timePassed.time-passed-visible:hover {
+  cursor: pointer !important;
 }
 
 #time-waves {
   position: relative;
   z-index: -1;
+  width: 400px;
 }
 #time-waves::before, #time-waves::after {
   content: "";
@@ -76,8 +85,8 @@ body {
   height: 10px;
   border: 3px solid hsla(150deg, 10%, 50%, 0.8);
   position: absolute;
-  bottom: 60px;
-  left: 0;
+  left: -6px;
+  bottom: -73px;
 }
 #time-waves::after {
   left: 394px;
@@ -90,17 +99,24 @@ body {
   height: 98%;
   width: 0;
   background-color: hsla(150deg, 10%, 50%, 0.2);
+  z-index: 1;
+  height: 125px;
 }
 
 .line {
   position: absolute;
   width: 100%;
   border: 1px solid hsla(150deg, 10%, 50%, 0.8);
-  bottom: 67px;
+  z-index: 1;
+  bottom: -67px;
 }
 
 #cardsChoice {
   width: 500px;
+}
+
+input:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1279px) {

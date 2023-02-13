@@ -7,6 +7,7 @@ const ctx = canvas.getContext("2d");
 const player = document.getElementById("player");
 var heightArray = new Array();
 var samplesAudio = 70;
+const timePassed = document.getElementById("timePassed");
 
 //**link mp3.infos to audioContext */
 const visualizeAudio = (url) => {
@@ -185,9 +186,11 @@ const pauseBtn = document.getElementById("pause");
 // console.log(pauseBtn);
 pauseBtn.addEventListener("click", pause);
 //!---------------------------------------------------------------//
+// TODO: Add to link current time to value
 //*TimeStamp*/
-const timePassed = document.getElementById("timePassed");
 
-timePassed.addEventListener("change", () => {
+timePassed.addEventListener("click", () => {
   console.log(timePassed.value);
+  console.log("test");
+  player.currentTime = timePassed.value * player.duration;
 });
