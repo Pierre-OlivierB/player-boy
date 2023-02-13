@@ -7,6 +7,7 @@ $sound: 50;
   grid-area: r;
   background: hsl(0, 0%, 95%);
   position: relative;
+  z-index: 2;
 }
 
 /** all content */

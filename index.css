@@ -130,7 +130,7 @@ body {
   border-radius: 5px;
   background: white;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 /**musics */
@@ -153,7 +153,7 @@ body {
   height: 100%;
   position: absolute;
   right: 0;
-  z-index: 1;
+  z-index: 2;
   transition: all 1s ease;
 }
 
@@ -162,6 +162,7 @@ body {
   height: 50px;
   position: absolute;
   top: 0px;
+  z-index: 1;
 }
 
 .cpb-right {
@@ -169,6 +170,7 @@ body {
   height: 50px;
   position: absolute;
   bottom: 0px;
+  z-index: 1;
 }
 
 .cpb-bot {
@@ -176,6 +178,7 @@ body {
   height: 100%;
   position: absolute;
   left: 0;
+  z-index: 2;
 }
 
 .cpb-bg {
@@ -305,6 +308,7 @@ body {
   grid-area: r;
   background: hsl(0deg, 0%, 95%);
   position: relative;
+  z-index: 2;
 }
 
 /** all content */

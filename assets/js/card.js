@@ -92,26 +92,74 @@ const cardsChoice = document.getElementById("cardsChoice");
 const drawerContent = document.getElementById("drawer-content");
 const drawerFixePart = document.querySelector(".cpb-top");
 const drawerBackPart = document.querySelector(".cpb-mid");
+// var cardsChoiceChanged;
+// var cardsChoiceLoad;
 var screenWidth = window.innerWidth;
+var verifChange = false;
 // console.log(drawerFixePart);
 // console.log(cardsChoice.value, drawerContent);
+function highInnerWidth() {
+  drawerFixePart.style.transform =
+    "translateX(" + cardsChoice.value * 5.5 + "px)";
+  drawerContent.style.transform = "translateX(" + -cardsChoice.value + "%)";
+}
+function lowInnerWidth() {
+  drawerBackPart.style.transform =
+    "translateY(" + (-45 + cardsChoice.value / 2) + "%)";
+}
+function resetForTransform() {
+  drawerBackPart.style.transform = "translateY(0)";
+  drawerFixePart.style.transform = "translateX(0)";
+  drawerContent.style.transform = "translateX(0)";
+}
+// function resetForLow() {
+//   drawerBackPart.style.transform = "translateY(0)";
+//   drawerFixePart.style.transform = "translateX(0)";
+//   drawerContent.style.transform = "translateX(0)";
+// }
 
-cardsChoice.addEventListener("change", () => {
-  // console.log(drawerContent.scrollbars);
-  // console.log(screenWidth);
-  if (screenWidth > 1279) {
-    drawerFixePart.style.transform =
-      "translateX(" + cardsChoice.value * 5.5 + "px)";
-    drawerContent.style.transform = "translateX(" + -cardsChoice.value + "%)";
-  } else if (screenWidth < 1279) {
-    // drawerFixePart.style.transform =
-    //   "translateY(" + -cardsChoice.value * 5.5 + "px)";
-    // console.log(cardsChoice.value);
-    drawerBackPart.style.transform =
-      "translateY(" + (-45 + cardsChoice.value / 2) + "%)";
+window.addEventListener("load", (e) => {
+  // console.log(e.currentTarget.innerWidth);
+  // console.log(verifChange);
+  // console.log(!verifChange);
+
+  cardsChoiceChanged = 0;
+
+  if (e.currentTarget.innerWidth > 1279) {
+    cardsChoice.addEventListener("change", () => {
+      highInnerWidth();
+      // console.log("test passed");
+    });
+  } else if (e.currentTarget.innerWidth <= 1279) {
+    cardsChoice.addEventListener(
+      "change",
+      () => {
+        lowInnerWidth();
+      },
+      false
+    );
   }
 
   // console.log(cardsChoice.value);
+});
+
+window.addEventListener("resize", () => {
+  // verifChange = true;
+  location.reload();
+  // console.log(verifChange, cardsChoiceChanged);
+  // console.log(e.currentTarget.innerWidth);
+  // if (e.currentTarget.innerWidth > 1279 && verifChange == true) {
+  //   resetForTransform();
+
+  //   cardsChoice.addEventListener("change", () => {
+  //     highInnerWidth();
+  //   });
+  // } else if (e.currentTarget.innerWidth < 1279 && verifChange == true) {
+  //   resetForTransform();
+  //   cardsChoice.addEventListener("change", () => {
+  //     lowInnerWidth();
+  //   });
+  // }
 });
 
 // !-----------------------------------------------------------
