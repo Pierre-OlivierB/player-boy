@@ -90,8 +90,7 @@ const greyTime = document.getElementById("grey-time-id");
 const speed = 1;
 const cTenth = canvas.width / 10;
 
-let index = 0,
-  flyHeight;
+let index = 0;
 
 // pipe settings
 const wallWidth = 10;
@@ -104,6 +103,13 @@ var wall = [canvas.width, wallHeight],
   wall1 = [canvas.width, wallHeight],
   wall2 = [canvas.width, wallHeight];
 position = [wall, wall1, wall2];
+
+// *Fly
+const img = new Image();
+img.src = "../../img/fly.png";
+var fly;
+var flyHeight;
+const size = [20, 30];
 
 function drawWall() {
   // !Experimental:
@@ -154,7 +160,33 @@ function drawWall() {
   }
   timePassed.value = (player.currentTime * 100) / player.duration;
   greyTime.style.width = `${timePassed.value}%`;
+  // *make fly appear
+  // flyHeight = position[0][1];
+  if (position[1][1] > flyHeight) {
+    flyHeight = flyHeight + flyHeight / position[1][1];
+  }
+  if (position[1][1] < flyHeight) {
+    // flyHeight = flyHeight - 2;
+    flyHeight = flyHeight - flyHeight / position[1][1];
+  }
+  // if (position[0][1] > position[1][1]) {
+  //   // flyHeight++;
+  //   flyHeight = Math.min(flyHeight + 0.2, canvas.height - size[1]);
+  // }
+  // if (position[1][1] > position[2][1]) {
+  //   // flyHeight = flyHeight + 2;
+  //   flyHeight = Math.min(flyHeight + 1, canvas.height - size[1]);
+  // }
+  // if (flyHeight < -15) {
+  //   flyHeight = -15;
+  // }
+  ctx.drawImage(img, 0, 0, size[1], size[1], 0, flyHeight, size[1], size[1]);
 }
+
+const setup = () => {
+  flyHeight = canvas.height / 2;
+};
+
 // *set-up launch
 function launch() {
   if (!onPlay) {
@@ -164,6 +196,7 @@ function launch() {
     visualizeAudio(player.src);
     samples = Math.ceil(player.duration);
     position;
+    flyHeight = canvas.height / 2;
     intervalRender = setInterval(drawWall, 10);
   }
 }

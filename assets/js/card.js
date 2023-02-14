@@ -143,8 +143,9 @@ window.addEventListener("load", (e) => {
   // console.log(cardsChoice.value);
 });
 
-window.addEventListener("resize", (e) => {
-  if (e.currentTarget.innerWidth < 1279) {
+window.addEventListener(
+  "resize",
+  () => {
     location.reload();
   }
   //   resetForTransform();
@@ -166,7 +167,7 @@ window.addEventListener("resize", (e) => {
   //     lowInnerWidth();
   //   });
   // }
-});
+);
 
 // !-----------------------------------------------------------
 // * Card
