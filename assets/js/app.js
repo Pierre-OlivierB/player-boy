@@ -180,11 +180,19 @@ function selectPress() {
     selectToggle = true;
     // console.log("Possibility : " + selectToggle);
     timePassed.classList.add("time-passed-visible");
+    pause();
   } else if (selectToggle) {
     selectToggle = false;
     // console.log("Possibility : " + selectToggle);
     timePassed.classList.remove("time-passed-visible");
+    // launch();
   }
   // console.log("sélection du temps");
 }
 slctBtn.addEventListener("click", selectPress);
+//* start game
+const playBtn = document.getElementById("play");
+playBtn.addEventListener("click", () => {
+  launch();
+  selectToggle ? selectPress() : null;
+});

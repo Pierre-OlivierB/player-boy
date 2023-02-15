@@ -190,6 +190,7 @@ const setup = () => {
 // *set-up launch
 function launch() {
   if (!onPlay) {
+    // console.log("enter");
     onPlay = true;
     inPause = false;
     player.play();
@@ -198,12 +199,11 @@ function launch() {
     position;
     flyHeight = canvas.height / 2;
     intervalRender = setInterval(drawWall, 10);
+    // selectPress();
   }
+  // console.log(onPlay);
 }
 
-//* start game
-const play = document.getElementById("play");
-play.addEventListener("click", launch);
 // const music = new Audio("../../list/tropical-summer-music-112842.mp3");
 // console.log(music.duration());
 //*pause game
@@ -224,6 +224,8 @@ pauseBtn.addEventListener("click", pause);
 
 timePassed.addEventListener("click", () => {
   console.log(timePassed.value);
-  console.log("test");
-  player.currentTime = timePassed.value * player.duration;
+  // console.log("test");
+  player.currentTime = (timePassed.value * player.duration) / 100;
+  index = Math.ceil(player.currentTime);
+  drawWall();
 });
