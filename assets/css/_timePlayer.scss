@@ -11,9 +11,9 @@
 }
 
 .player {
-    margin-bottom: 50px;
     justify-content: space-around;
     position: relative;
+    height: 150px;
 }
 
 #timePassed {
@@ -44,6 +44,8 @@
     position: relative;
     z-index: -1;
     width: 400px;
+    margin-right: 5%;
+    transform: translateY(-75px);
 
     // &:hover #timePassed {
     //     opacity: 1;

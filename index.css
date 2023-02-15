@@ -1,11 +1,18 @@
+@font-face {
+  font-family: "Special";
+  src: url(assets/font/SpecialElite-Regular.ttf) format("truetype");
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Special", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 body {
   /* background: red; */
+  height: 100vh;
+  background: hsl(0deg, 0%, 85%);
 }
 
 #player {
@@ -38,6 +45,14 @@ body {
   grid-template: "l r" 1fr;
   grid-template-columns: 600px;
   padding: 5px;
+  background: url(../../img/carrelage.jpg) center/cover;
+}
+
+#select,
+#stop {
+  background: white;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px 2px hsl(0deg, 0%, 25%);
 }
 
 #tstp-canvas {
@@ -50,9 +65,9 @@ body {
 }
 
 .player {
-  margin-bottom: 50px;
   justify-content: space-around;
   position: relative;
+  height: 150px;
 }
 
 #timePassed {
@@ -78,6 +93,8 @@ body {
   position: relative;
   z-index: -1;
   width: 400px;
+  margin-right: 5%;
+  transform: translateY(-75px);
 }
 #time-waves::before, #time-waves::after {
   content: "";
@@ -147,6 +164,7 @@ input:hover {
   background: white;
   position: relative;
   z-index: 3;
+  background: url(../../img/drawer-wood.jpg) center/cover;
 }
 
 /**musics */
@@ -198,7 +216,7 @@ input:hover {
 }
 
 .cpb-bg {
-  background: white;
+  background: url(../../img/drawer-wood.jpg) center/cover;
   border-radius: 5px;
 }
 
@@ -210,7 +228,7 @@ input:hover {
   height: 580px;
   border-radius: 5px;
   padding: 50px 50px 50px 25px;
-  background: rgb(152, 111, 111);
+  background: hsl(27deg, 22%, 92%);
 }
 
 @media screen and (max-width: 1279px) {
@@ -234,7 +252,7 @@ input:hover {
 }
 /**Card*/
 .card {
-  background: white;
+  background: linear-gradient(180deg, rgb(153, 153, 255) 0%, rgb(128, 128, 255) 50%, rgb(136, 136, 255) 85%, rgb(153, 153, 255) 100%);
   width: 190px;
   height: 220px;
   display: flex;
@@ -242,6 +260,7 @@ input:hover {
   align-items: center;
   margin: 10px;
   transition: transform 1s ease;
+  box-shadow: 0 0 3px 3px hsl(0deg, 0%, 25%);
 }
 .card:hover, .card.card-active {
   background: lightgray;
@@ -322,7 +341,7 @@ input:hover {
   border: 1px solid black;
   border-left: 1px solid transparent;
   grid-area: r;
-  background: hsl(0deg, 0%, 95%);
+  background: hsl(0deg, 0%, 95%) url(../../img/wood.jpg) center/cover;
   position: relative;
   z-index: 2;
 }
@@ -338,6 +357,7 @@ input:hover {
   justify-content: space-evenly;
   align-items: center;
   border-radius: 15px;
+  background: linear-gradient(180deg, rgb(128, 128, 255) 0%, rgb(136, 136, 255) 85%, rgb(153, 153, 255) 100%);
 }
 
 /** specificly screen */
@@ -351,6 +371,7 @@ input:hover {
   flex-direction: column;
   position: relative;
   border-radius: 15px;
+  background: linear-gradient(180deg, rgb(153, 153, 255) 0%, rgb(128, 128, 255) 50%, rgb(136, 136, 255) 85%, rgb(153, 153, 255) 100%);
 }
 .screen canvas {
   border: 1px solid black;
@@ -390,6 +411,10 @@ input:hover {
   width: 150px;
   height: 150px;
 }
+.cross ul li {
+  background: hsl(0deg, 0%, 75%);
+  box-shadow: 0px 0px 5px 2px hsl(0deg, 0%, 25%);
+}
 
 .grid-cross {
   display: grid;
@@ -420,6 +445,16 @@ input:hover {
   transform: scale(1.35);
 }
 
+#before-btn::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: hsl(0deg, 0%, 75%);
+  right: -21px;
+  border-radius: 4px;
+}
+
 .plus {
   grid-area: plus;
   border-bottom: 1px solid transparent;
@@ -433,6 +468,8 @@ input:hover {
 .before {
   grid-area: before;
   border-right: 1px solid transparent;
+  position: relative;
+  z-index: 3;
 }
 
 .next {
@@ -482,6 +519,8 @@ input:hover {
   height: inherit;
   transform: scale(1);
   transition: transform 1s ease;
+  background: hsl(0deg, 0%, 75%);
+  box-shadow: 0px 0px 5px 2px hsl(0deg, 0%, 25%);
 }
 .play button:hover {
   cursor: pointer;
@@ -500,6 +539,8 @@ input:hover {
   height: inherit;
   transform: scale(1);
   transition: transform 1s ease;
+  background: hsl(0deg, 0%, 75%);
+  box-shadow: 0px 0px 5px 2px hsl(0deg, 0%, 25%);
 }
 .pause button:hover {
   cursor: pointer;

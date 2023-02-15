@@ -1,15 +1,26 @@
     $content-w-h: 1200px;
     $boy-radius: 15px;
 
+    @font-face {
+      font-family: "Special";
+      src: url(assets/font/SpecialElite-Regular.ttf) format("truetype");
+    }
+
     * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
+      font-family: "Special", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
+
+
 
     body {
       /* background: red; */
       // height: 100vh;
+      height: 100vh;
+      background: hsl(0, 0%, 85%);
+
     }
 
     #player {
@@ -42,4 +53,13 @@
       grid-template: "l r" 1fr;
       grid-template-columns: calc($content-w-h / 2);
       padding: 5px;
+      background: url(../../img/carrelage.jpg) center/cover;
+    }
+
+    // *buttons select and stop
+    #select,
+    #stop {
+      background: white;
+      font-weight: bold;
+      box-shadow: 0px 0px 5px 2px hsl(0deg 0% 25%);
     }

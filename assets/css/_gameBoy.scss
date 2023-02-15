@@ -5,7 +5,8 @@ $sound: 50;
   border: 1px solid black;
   border-left: 1px solid transparent;
   grid-area: r;
-  background: hsl(0, 0%, 95%);
+  background: hsl(0, 0%, 95%) url(../../img/wood.jpg) center/cover;
+  ;
   position: relative;
   z-index: 2;
 }
@@ -21,6 +22,8 @@ $sound: 50;
   justify-content: space-evenly;
   align-items: center;
   border-radius: $boy-radius;
+  background: linear-gradient(180deg, rgba(128, 128, 255, 1) 0%, rgba(136, 136, 255, 1) 85%, rgba(153, 153, 255, 1) 100%);
+  ;
 }
 
 /** specificly screen */
@@ -34,6 +37,7 @@ $sound: 50;
   flex-direction: column;
   position: relative;
   border-radius: $boy-radius;
+  background: linear-gradient(180deg, rgba(153, 153, 255, 1) 0%, rgba(128, 128, 255, 1) 50%, rgba(136, 136, 255, 1) 85%, rgba(153, 153, 255, 1) 100%);
 
 
   & canvas {
@@ -75,6 +79,11 @@ $sound: 50;
 .cross {
   width: 150px;
   height: 150px;
+
+  & ul li {
+    background: hsl(0, 0%, 75%);
+    box-shadow: 0px 0px 5px 2px hsl(0deg 0% 25%);
+  }
 }
 
 .grid-cross {
@@ -113,6 +122,16 @@ $sound: 50;
   }
 }
 
+#before-btn::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: hsl(0deg, 0%, 75%);
+  right: -21px;
+  border-radius: 4px;
+}
+
 .plus {
   grid-area: plus;
   border-bottom: 1px solid transparent;
@@ -126,6 +145,8 @@ $sound: 50;
 .before {
   grid-area: before;
   border-right: 1px solid transparent;
+  position: relative;
+  z-index: 3;
 }
 
 .next {
@@ -177,6 +198,8 @@ $sound: 50;
     height: inherit;
     transform: scale(1);
     transition: transform 1s ease;
+    background: hsl(0, 0%, 75%);
+    box-shadow: 0px 0px 5px 2px hsl(0deg 0% 25%);
 
     &:hover {
       cursor: pointer;
@@ -198,6 +221,8 @@ $sound: 50;
     height: inherit;
     transform: scale(1);
     transition: transform 1s ease;
+    background: hsl(0, 0%, 75%);
+    box-shadow: 0px 0px 5px 2px hsl(0deg 0% 25%);
 
     &:hover {
       cursor: pointer;
