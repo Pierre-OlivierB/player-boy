@@ -44,7 +44,7 @@ body {
   grid-template: "l r" 1fr;
   grid-template-columns: 600px;
   padding: 5px;
-  background: url(../../img/carrelage.jpg) center/cover;
+  background: url(./img/carrelage.jpg) center/cover;
 }
 
 #select,
@@ -162,7 +162,7 @@ input:hover {
   background: white;
   position: relative;
   z-index: 3;
-  background: url(../../img/drawer-wood.jpg) center/cover;
+  background: url(./img/drawer-wood.jpg) center/cover;
 }
 
 /**musics */
@@ -214,7 +214,7 @@ input:hover {
 }
 
 .cpb-bg {
-  background: url(../../img/drawer-wood.jpg) center/cover;
+  background: url(./img/drawer-wood.jpg) center/cover;
   border-radius: 5px;
 }
 
@@ -339,7 +339,7 @@ input:hover {
   border: 1px solid black;
   border-left: 1px solid transparent;
   grid-area: r;
-  background: hsl(0deg, 0%, 95%) url(../../img/wood.jpg) center/cover;
+  background: hsl(0deg, 0%, 95%) url(./img/wood.jpg) center/cover;
   position: relative;
   z-index: 2;
 }

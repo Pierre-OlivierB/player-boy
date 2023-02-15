@@ -1,5 +1,5 @@
 // *List musics
-fetch("../../musics_infos.json")
+fetch("./musics_infos.json")
   .then((response) => response.json())
   .then((json) => getMusics(json.musics));
 

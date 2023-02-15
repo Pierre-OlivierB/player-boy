@@ -19,7 +19,6 @@ const visualizeAudio = (url) => {
 //* filter fetch data*/
 const filterData = (audioBuffer) => {
   samplesAudio = Math.floor(player.duration);
-  console.log(samplesAudio);
   const rawData = audioBuffer.getChannelData(0);
   const blockSize = Math.floor(rawData.length / samplesAudio);
   const filteredData = [];
@@ -76,7 +75,7 @@ position = [wall, wall1, wall2];
 
 // *Fly
 const img = new Image();
-img.src = "../../img/fly.png";
+img.src = "./img/fly.png";
 var fly;
 var flyHeight;
 const size = [20, 30];

@@ -53,13 +53,11 @@ const nextMusic = document.getElementById("next-btn");
 const prevMusic = document.getElementById("before-btn");
 
 function nxtMsc() {
-  console.log("next music");
   if (indexMusic === musicsList.length - 1) {
     indexMusic = 0;
   } else if (indexMusic < musicsList.length - 1) {
     indexMusic++;
   }
-  console.log(indexMusic);
   //* reset gamescreen
   onPlay = false;
   greyTime.style.width = 0;
@@ -75,7 +73,6 @@ function nxtMsc() {
   index = 0;
 }
 function prvMsc() {
-  console.log("previous music");
   if (indexMusic === 0) {
     indexMusic = musicsList.length - 1;
   } else if (indexMusic > 0) {
