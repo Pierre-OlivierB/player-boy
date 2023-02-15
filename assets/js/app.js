@@ -1,31 +1,7 @@
-// console.log("test");
-//!Recup DOM
-// var playerSound = document.getElementById("player");
-
-//*---------------------------------------
-//*Tools:
-//link : https://webdesign.tutsplus.com/tutorials/build-a-custom-html-music-player-using-javascript-and-the-web-audio-api--cms-93300
-// console.log(player.currentTime);
-// console.log(player.currentSrc);
-// console.log(player.duration);
-// console.log(player.ended);
-// console.log(player.volume);
-
-// player.play();
-// player.pause();
-
-//*see audioContext
-//! wave sound
-// TODO: read : https://css-tricks.com/making-an-audio-waveform-visualizer-with-vanilla-javascript/
-// TODO : see: https://www.youtube.com/watch?v=ftjZI4mLCoI&list=RDCMUCkjoHfkLEy7ZT4bA2myJ8xA&start_radio=1&rv=ftjZI4mLCoI&t=0
-// *------------------------------------------------------------
-
 const titleScreen = document.getElementById("title-sc");
 const artScreen = document.getElementById("artist-sc");
 const timeScreen = document.getElementById("time-sc");
 
-// var titleCard, artCard, timeCard;
-// console.log(titleScreen, artScreen, timeScreen);
 // *Load 1frst production
 function loadMusicScreen(e) {
   titleScreen.innerText = musicsList[e].title;
@@ -33,13 +9,7 @@ function loadMusicScreen(e) {
   timeScreen.innerText = musicsList[e].time;
   player.src = musicsList[e].src;
 }
-// function loadMusicCard(e) {
-//   titleCard[e].innerText = musicsList[e].title;
-//   artCard[e].innerText = musicsList[e].artist;
-//   timeCard[e].innerText = musicsList[e].time;
-// }
 window.addEventListener("load", () => {
-  // console.log(musicsList[0].title);
   loadMusicScreen(0);
   visualizeAudioTwo(player.src);
 });
@@ -49,39 +19,29 @@ var indexMusic = 0;
 const soundCtrlPlus = document.getElementById("plus-btn");
 const soundCtrlMinus = document.getElementById("minus-btn");
 const countVol = document.getElementById("cnt-sound");
-// console.log(countVol.innerText);
 var vol;
-// console.log(soundCtrl);
-// console.log(vol);
 
 function soundPlus() {
   vol = player.volume;
   if (vol === 1 || vol > 1) {
     vol = 1;
-
-    // console.log("no plus");
   } else if (vol < 1) {
     vol = vol + 0.05;
     vol = Math.round(vol * 100) / 100;
   }
   countVol.innerText = Math.ceil(vol * 100);
   player.volume = vol;
-
-  // console.log(vol);
 }
 function soundMinus() {
   vol = player.volume;
   if (vol === 0 || vol <= 0.01) {
     vol = 0;
-
-    // console.log("no minus");
   } else if (vol > 0.01) {
     vol = vol - 0.05;
     vol = Math.round(vol * 100) / 100;
   }
   countVol.innerText = Math.ceil(vol * 100);
   player.volume = vol;
-  // console.log(vol);
 }
 
 soundCtrlPlus.addEventListener("click", soundPlus);
@@ -91,7 +51,6 @@ soundCtrlMinus.addEventListener("click", soundMinus);
 //* next music
 const nextMusic = document.getElementById("next-btn");
 const prevMusic = document.getElementById("before-btn");
-// console.log(nextMusic, prevMusic);
 
 function nxtMsc() {
   console.log("next music");
@@ -101,7 +60,7 @@ function nxtMsc() {
     indexMusic++;
   }
   console.log(indexMusic);
-  // reset gamescreen
+  //* reset gamescreen
   onPlay = false;
   greyTime.style.width = 0;
   clearInterval(intervalRender);
@@ -113,7 +72,6 @@ function nxtMsc() {
   wall1 = [canvas.width, wallHeight];
   wall2 = [canvas.width, wallHeight];
   position = [wall, wall1, wall2];
-  // console.log(position);
   index = 0;
 }
 function prvMsc() {
@@ -123,8 +81,6 @@ function prvMsc() {
   } else if (indexMusic > 0) {
     indexMusic--;
   }
-  // console.log(indexMusic);
-  // reset gamescreen
   onPlay = false;
   greyTime.style.width = 0;
   clearInterval(intervalRender);
@@ -145,7 +101,7 @@ prevMusic.addEventListener("click", prvMsc);
 // !-----------------------------------------
 // *Stop Btns
 const stopBtn = document.getElementById("stop");
-// console.log(stopBtn);
+
 function stopMusic() {
   if (onPlay || inPause) {
     onPlay = false;
@@ -161,7 +117,6 @@ function stopMusic() {
     wall2 = [canvas.width, wallHeight];
     position = [wall, wall1, wall2];
     index = 0;
-    console.log("btn stop press");
   }
 }
 stopBtn.addEventListener("click", stopMusic);
@@ -169,25 +124,16 @@ stopBtn.addEventListener("click", stopMusic);
 // !------------------------------------------------
 // *Select
 const slctBtn = document.getElementById("select");
-// const timePassed = document.getElementById("timePassed");
-// console.log(timePassed);
 var selectToggle = false;
-// const addVisibility = (timePassed.classList.add = "time-passed-visible");
-// const removeVisibility = (timePassed.classList.remove = "time-passed-visible");
-// console.log(slctBtn);
 function selectPress() {
   if (!selectToggle) {
     selectToggle = true;
-    // console.log("Possibility : " + selectToggle);
     timePassed.classList.add("time-passed-visible");
     pause();
   } else if (selectToggle) {
     selectToggle = false;
-    // console.log("Possibility : " + selectToggle);
     timePassed.classList.remove("time-passed-visible");
-    // launch();
   }
-  // console.log("sélection du temps");
 }
 slctBtn.addEventListener("click", selectPress);
 //* start game

@@ -44,7 +44,6 @@ function repeatCard() {
     let artCard = document.querySelectorAll(".artist-cd");
     let timeCard = document.querySelectorAll(".time-cd");
     let bgCard = document.querySelectorAll(".card-mid");
-    // console.log(titleCard[i].innerText);
     titleCard[i].innerText = musicsList[i].title;
     artCard[i].innerText = musicsList[i].artist;
     timeCard[i].innerText = musicsList[i].time;
@@ -54,8 +53,6 @@ function repeatCard() {
     keyCard++;
   }
 }
-// console.log(titleCard, artCard, timeCard);
-// console.log(content);
 // *reapeat card, add listener on it, add possibility class on click
 window.addEventListener("load", () => {
   repeatCard();
@@ -66,7 +63,6 @@ window.addEventListener("load", () => {
         cardActive[i].classList.remove("card-active");
       }
       e.classList.add("card-active");
-      // console.log(e.id.slice(4));
       indexMusic = e.id.slice(4);
       onPlay = false;
       greyTime.style.width = 0;
@@ -83,7 +79,6 @@ window.addEventListener("load", () => {
     });
   });
   let firstCard = document.getElementById("card0");
-  // console.log(firstCard);
   firstCard.classList.add("card-active");
 });
 // !------------------------------------------------------------
@@ -92,12 +87,10 @@ const cardsChoice = document.getElementById("cardsChoice");
 const drawerContent = document.getElementById("drawer-content");
 const drawerFixePart = document.querySelector(".cpb-top");
 const drawerBackPart = document.querySelector(".cpb-mid");
-// var cardsChoiceChanged;
-// var cardsChoiceLoad;
+
 var screenWidth = window.innerWidth;
 var verifChange = false;
-// console.log(drawerFixePart);
-// console.log(cardsChoice.value, drawerContent);
+
 function highInnerWidth() {
   drawerFixePart.style.transform =
     "translateX(" + cardsChoice.value * 5.5 + "px)";
@@ -112,23 +105,13 @@ function resetForTransform() {
   drawerFixePart.style.transform = "translateX(0)";
   drawerContent.style.transform = "translateX(0)";
 }
-// function resetForLow() {
-//   drawerBackPart.style.transform = "translateY(0)";
-//   drawerFixePart.style.transform = "translateX(0)";
-//   drawerContent.style.transform = "translateX(0)";
-// }
 
 window.addEventListener("load", (e) => {
-  // console.log(e.currentTarget.innerWidth);
-  // console.log(verifChange);
-  // console.log(!verifChange);
-
   cardsChoiceChanged = 0;
 
   if (e.currentTarget.innerWidth > 1279) {
     cardsChoice.addEventListener("change", () => {
       highInnerWidth();
-      // console.log("test passed");
     });
   } else if (e.currentTarget.innerWidth <= 1279) {
     cardsChoice.addEventListener(
@@ -139,43 +122,16 @@ window.addEventListener("load", (e) => {
       false
     );
   }
-
-  // console.log(cardsChoice.value);
 });
 
-window.addEventListener(
-  "resize",
-  () => {
-    location.reload();
-  }
-  //   resetForTransform();
-
-  //   cardsChoice.addEventListener("change", () => {
-  //     highInnerWidth();
-  //   });
-  // console.log(verifChange, cardsChoiceChanged);
-  // console.log(e.currentTarget.innerWidth);
-  // if (e.currentTarget.innerWidth > 1279 && verifChange == true) {
-  //   resetForTransform();
-
-  //   cardsChoice.addEventListener("change", () => {
-  //     highInnerWidth();
-  //   });
-  // } else if (e.currentTarget.innerWidth < 1279 && verifChange == true) {
-  //   resetForTransform();
-  //   cardsChoice.addEventListener("change", () => {
-  //     lowInnerWidth();
-  //   });
-  // }
-);
+window.addEventListener("resize", () => {
+  location.reload();
+});
 
 // !-----------------------------------------------------------
 // * Card
 
-// console.log(cardActive);
-
 function addActiveOnChange() {
-  // console.log(document.getElementById(`card${indexMusic}`));
   let nextCard = document.getElementById(`card${indexMusic}`);
   cardActive = document.querySelectorAll(".card");
   for (let i = 0; i < cardActive.length; i++) {
@@ -183,8 +139,5 @@ function addActiveOnChange() {
   }
   nextCard.classList.add("card-active");
 }
-// function addActiveOnPrev() {
-
-// }
 nextMusic.addEventListener("click", addActiveOnChange);
 prevMusic.addEventListener("click", addActiveOnChange);

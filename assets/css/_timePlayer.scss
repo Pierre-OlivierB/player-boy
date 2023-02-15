@@ -1,11 +1,8 @@
 #tstp-canvas {
-    // border: 1px solid black;
     width: 400px;
     height: 130px;
     position: relative;
     z-index: 1;
-    // background: black;
-    // *add
     position: absolute;
     right: 3px;
 }
@@ -24,13 +21,11 @@
     opacity: 0;
     transition: opacity 1s ease;
     z-index: 0;
-    // *add
     top: 60px;
 
     &.time-passed-visible {
         opacity: 1;
         z-index: 10;
-        // *add
         height: 10px;
 
         &:hover {
@@ -42,14 +37,10 @@
 
 #time-waves {
     position: relative;
-    z-index: -1;
+    z-index: 1;
     width: 400px;
     margin-right: 5%;
     transform: translateY(-75px);
-
-    // &:hover #timePassed {
-    //     opacity: 1;
-    // }
 
     &::before,
     &::after {
@@ -58,7 +49,6 @@
         height: 10px;
         border: 3px solid hsla(150, 10%, 50%, 0.8);
         position: absolute;
-        // bottom: 60px;
         left: -6px;
         bottom: -73px;
     }
@@ -85,7 +75,6 @@
     position: absolute;
     width: 100%;
     border: 1px solid hsla(150, 10%, 50%, 0.8);
-    // bottom: 67px;
     z-index: 1;
     // *add
     bottom: -67px;
@@ -102,9 +91,6 @@ input:hover {
 
 @media screen and (max-width:1279px) {
 
-    // #timePassed{
-    //     right: 8px;
-    // }
     #cardsChoice {
         transform: translate(210px, -310px) rotateZ(90deg);
         width: 450px;

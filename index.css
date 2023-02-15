@@ -10,7 +10,6 @@
 }
 
 body {
-  /* background: red; */
   height: 100vh;
   background: hsl(0deg, 0%, 85%);
 }
@@ -91,7 +90,7 @@ body {
 
 #time-waves {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   width: 400px;
   margin-right: 5%;
   transform: translateY(-75px);
@@ -149,7 +148,6 @@ input:hover {
 }
 /*!drawer */
 .drawer {
-  border: 1px solid black;
   border-right: none;
   grid-area: l;
   flex-direction: row-reverse;
@@ -628,11 +626,9 @@ input:hover {
     height: 50px;
   }
   .drawer {
-    /* transform: rotate(-90deg); */
     flex-direction: column;
   }
   .cpb-bot {
-    /* left:0; */
     bottom: 0;
     width: 100%;
     height: 30px;
@@ -643,9 +639,6 @@ input:hover {
   .cpb-left {
     z-index: 1;
   }
-  /* .game{
-
-    } */
 }
 @media screen and (max-width: 1279px) and (max-width: 1279px) {
   .cpb-left {

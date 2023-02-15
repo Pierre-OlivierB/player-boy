@@ -2,7 +2,6 @@ $drawer-width : 1000px;
 
 /*!drawer */
 .drawer {
-  border: 1px solid black;
   border-right: none;
   grid-area: l;
   flex-direction: row-reverse;
@@ -25,10 +24,8 @@ $drawer-width : 1000px;
 .content-part {
   width: 540px;
   height: 580px;
-  // background: rgb(152, 111, 111);
   position: relative;
   border-radius: 20px;
-  // overflow: hidden;
   transition: all 1s ease;
 }
 
@@ -81,7 +78,6 @@ $drawer-width : 1000px;
 .cpb-mid {
   display: flex;
   flex-wrap: wrap;
-  // width: 540px;
   width: $drawer-width;
   height: 580px;
   border-radius: 5px;
