@@ -90,9 +90,10 @@ function drawWall() {
   position[0][0] = position[0][0] - speed;
   // *display walls
   for (let i = 0; i < position.length; i++) {
+    position[i][1] = canvas.height - heightArray[index + i];
     ctx.fillRect(
       position[i][0],
-      canvas.height - heightArray[index + i],
+      position[i][1],
       wallWidth,
       heightArray[index + i]
     );
@@ -125,13 +126,27 @@ function drawWall() {
   timePassed.value = (player.currentTime * 100) / player.duration;
   greyTime.style.width = `${timePassed.value}%`;
   // *make fly appear
-  if (position[1][1] > flyHeight) {
-    flyHeight = flyHeight + flyHeight / position[1][1];
+  if (position[0][1] > flyHeight + 50) {
+    flyHeight = flyHeight + 0.5;
   }
-  if (position[1][1] < flyHeight) {
-    flyHeight = flyHeight - flyHeight / position[1][1];
+  if (position[0][1] < flyHeight + 50) {
+    flyHeight = flyHeight - 1;
+    if (position[0][1] * 1.1 < flyHeight) {
+      flyHeight = flyHeight - 1.5;
+      console.log("fast");
+      if (position[0][1] * 1.25 < flyHeight) {
+        flyHeight = flyHeight - 2;
+        console.log("fast++");
+      }
+    }
   }
   ctx.drawImage(img, 0, 0, size[1], size[1], 0, flyHeight, size[1], size[1]);
+  // console.log(
+  //   position[0][1],
+  //   position[1][1],
+  //   canvas.height - flyHeight - 50,
+  //   position
+  // );
 }
 
 const setup = () => {
