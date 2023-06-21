@@ -124,9 +124,9 @@ window.addEventListener("load", (e) => {
   }
 });
 
-window.addEventListener("resize", () => {
-  location.reload();
-});
+// window.addEventListener("resize", () => {
+//   location.reload();
+// });
 
 // !-----------------------------------------------------------
 // * Card
